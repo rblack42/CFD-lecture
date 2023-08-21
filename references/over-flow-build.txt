@@ -1,0 +1,57 @@
+
+Conversation opened. 3 messages. All messages read.
+
+Skip to content
+Using Gmail with screen readers
+46 of 59
+[overflow] Building OVERFLOW 2.4b on ARM CPU System (aarch64)
+Inbox
+
+David Barker via overflow
+Mon, Apr 17, 11:52 AM (1 day ago)
+Hi John: I have built overflow 2.4b on an ARM64 system(s) I have that mostly run Ubuntu 18.04 LTS. I have not tested it at all thoroughly, but I used the follow
+
+John Bussoletti via overflow
+Mon, Apr 17, 12:58 PM (23 hours ago)
+Dave, Thanks. I was able to build with mcmodel=large with gfortran and omitting -fPIC, but can’t test anything yet. I didn’t realize when I requested access to
+
+David Barker via overflow <overflow@lists.nasa.gov>
+Mon, Apr 17, 2:21 PM (22 hours ago)
+to overflow
+
+John:
+
+    Yes, been down that same path regarding pegasus and chimera.
+
+FWIW, here are my build scripts for those. Looks like I used gcc/gfortran 9.3.0... Hmmm. And you need tcl8.6 for chimera...
+
+I've spent considerable effort getting all the test cases to run on x86 (non-intel compilers) and a NEC Vector system over the last year or so. There are some quirks and issues with some of the test cases as they have all rather naturally drifted to be very x86/intel-ifort-compiler-centric over the years. Happy to share this info when you need it. Also, numerically, everything works much better with double precision on non-intel-non-ifort, so I would not spend too much effort on single precision. (This is mostly due to some very intel-specific flags, such as -ftz -fpe0 -fp-model precise, with set the processor control words to settings which may not exist on other architectures, as well as affecting generated code by ifort across the board in wild and wacky ways)
+
+Dave
+
+rockfishc:/local/dpb/overflow_2022/work/t1/chimera2.2> cat go.build.rockfishc
+#!/bin/sh
+. /home/dpb/bin/modules.sh
+module purge
+module load gcc-9.3.0
+set -e -x
+./configure --with-fort=gfortran --with-cc=gcc --with-installdir=/soft/chimera --with-tcldir_inc=/usr/include/tcl8.6
+make CMD=clobber
+make
+make CMD=install
+rockfishc:/local/dpb/overflow_2022/work/t1/chimera2.2>
+
+#!/bin/sh
+. /home/dpb/bin/modules.sh
+module unload gcc-10.2.0
+module load gcc-9.3.0
+set -e -x
+./configure --with-installdir=/soft/pegasus --with-gfortran
+make clobber
+make clean
+make F90FLAGS=-I/soft/mpi/mpich-3.3/include
+make install
+rockfishc:/local/dpb/overflow_2022/work/t1/pegasus5.2d>
+
+2 deleted messages in this conversation. View messages or delete forever.
+

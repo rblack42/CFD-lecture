@@ -1,0 +1,16 @@
+# Mac
+.DS_Store
+
+# Python
+.ipynb_checkpoints
+.venv
+__pycache__
+*.py[cod]
+unpublished
+_build
+
+# Vim
+*~
+*.swp
+
+

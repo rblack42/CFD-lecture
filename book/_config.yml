@@ -1,0 +1,49 @@
+# Book settings
+title: CFD-HPC Lecture
+author: The Roie R. Black
+copyright: 2023 by Roie Black
+logo: assets/images/logo/lpp.gif
+
+execute:
+  execute_notebooks: force
+
+exclude_patterns: [content/unpublished/*, unpublished/*, inwork/*]
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath         # enable direct parsing of amsmath LaTeX equations
+    - dollarmath      # enable support for `$$` and `$` syntax for math blocks
+    - html_admonition # Notes, warnings, and other admonitions. [2]
+    - html_image      # directives to be used such as {image} and {figure}
+    - linkify         # automatically identify “bare” web URLs and add hyperlinks
+    - replacements    # automatically convert some common typographic texts (e.g (tm), (c) )
+    - smartquotes     # automatically convert standard quotations to their opening/closing variants:
+    - substitution    # will allow you to add substitutions (variables) in markdown
+
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+# Information about where the book exists on the web
+repository:
+  favicon: ../assets/images/logo/lpp.ico
+  url: https://github.com/rblack42/jupyter-project  # Online location of your book
+  path_to_book: docs  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+html:
+  home_page_in_navbar: true
+  use_issues_button: true
+  use_repository_button: true
+  extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+
+  use_issues_button: true
+  use_repository_button: true
