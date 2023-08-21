@@ -2,7 +2,7 @@ A Short History of CFD and HPC
 ##############################
 :Author: Roie R. Black
 :Email: roie.black@gmail.com
-:Docs: https://rblack42.github.io/CFD-talk
+:Docs: https://rblack42.github.io/CFD-lecture
 
 The project contains the notes I prepared for a lecture on the development of
 High Performance Computing and Computational Fluid Dynamics, presented to
