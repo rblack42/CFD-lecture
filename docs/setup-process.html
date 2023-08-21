@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Setup Process &#8212; CFD-HPC Lecture</title>
+    <title>Setting up a Python Project &#8212; CFD-HPC Lecture</title>
   
   
   
@@ -64,8 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'setup-process';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="A Short History of CFD and High Performance Computing" href="01-lecture.html" />
-    <link rel="prev" title="CFD and HPC Lecture" href="intro.html" />
+    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="prev" title="A Short History of CFD and High Performance Computing" href="01-lecture.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01-lecture.html">A Short History of CFD and High Performance Computing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setting up a Python Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -330,7 +330,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -341,11 +343,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Setup Process</h1>
+    <h1>Setting up a Python Project</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-create-a-project-directory">Step 1. Create a project directory:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-the-local-directories-needed">Step 2. Create the local directories needed:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-the-working-python-environment">Step 3. Create the working <em>Python</em> environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-python-project-requirements">Step 4. Install <em>Python</em> Project Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -355,37 +369,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="setup-process">
-<h1>Setup Process<a class="headerlink" href="#setup-process" title="Permalink to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p>Create a project directory:</p></li>
-</ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-a-python-project">
+<h1>Setting up a Python Project<a class="headerlink" href="#setting-up-a-python-project" title="Permalink to this heading">#</a></h1>
+<p>This note details how I set up a Python project on my Mac systems. I will add notes on doing the same setup on WIndows soon!</p>
+<section id="step-1-create-a-project-directory">
+<h2>Step 1. Create a project directory:<a class="headerlink" href="#step-1-create-a-project-directory" title="Permalink to this heading">#</a></h2>
+<p>All projects should be contained under a single directory. I use a directory
+named <strong>_dev</strong>* on my systems for all active projects:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir ~/_dev/jupyter-project
 $ cd ~/_dev/jupyter-project
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Create the local directories needed:</p></li>
-</ol>
+<p>You should create a project name to help you remember what this project is
+about. Do not just use <strong>Project1</strong> or something similar, you will never
+remember what that project was about later!</p>
+</section>
+<section id="step-2-create-the-local-directories-needed">
+<h2>Step 2. Create the local directories needed:<a class="headerlink" href="#step-2-create-the-local-directories-needed" title="Permalink to this heading">#</a></h2>
+<p>Most of my Python projects use <em>Jupeterlab</em>  for testing code snippets, and
+creating documentation. Here are subdirectories I usually create.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir -p book/images
 $ mkdir docs
 $ mkdir src
 $ touch docs/.nojekyll
 </pre></div>
 </div>
-<p>These directories hold basic project files:</p>
+<p>That last line is needed if you use <em>GitHub</em> to publish your notes. This is a
+free website for developers who use <em>GitHub</em>.</p>
+<p>These directories hold basic
+project files:</p>
 <ul class="simple">
-<li><p>book - This is where <em>Jupyter Notebook</em> will work</p>
+<li><p>book - This is where <em>Jupyter Notebook</em> files will be located</p>
 <ul>
 <li><p>images - all graphics assets live here</p></li>
 </ul>
 </li>
-<li><p>docs - HTML files end up here by the build process</p></li>
+<li><p>docs - HTML files end up here by the build process. GitHub can publish these on the web.</p></li>
 <li><p>src: This is where *Python source code will be stored</p></li>
 </ul>
-<ol class="arabic simple" start="3">
-<li><p>Create the working <em>Python</em> environment</p></li>
-</ol>
+</section>
+<section id="step-3-create-the-working-python-environment">
+<h2>Step 3. Create the working <em>Python</em> environment<a class="headerlink" href="#step-3-create-the-working-python-environment" title="Permalink to this heading">#</a></h2>
 <p>These steps create a <em>Virtual Environment</em> to isolate this project from others in the development system.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ~/_sys/PYPROJ/bootstrap.sh
 $ make help
@@ -394,17 +418,20 @@ $ make pyprep
 </div>
 <p>This script copies files from a directory on my system where I keep template files used in many projects. These will be detailed later.</p>
 <p>The system I set up for <strong>make</strong> separates a <strong>Makefile</strong> into components related to different tools you might wish to use. The <strong>make help</strong> command displays the availabile commands pre-configured for this setup.</p>
-<ol class="arabic simple" start="4">
-<li><p>Install <em>Python</em> Requirements</p></li>
-</ol>
-<p>At this point, review the <strong><a class="reference external" href="http://requirements.in">requirements.in</a></strong> file. It has been pre-configured for a <em>Jypyter</em> project.</p>
+</section>
+<section id="step-4-install-python-project-requirements">
+<h2>Step 4. Install <em>Python</em> Project Requirements<a class="headerlink" href="#step-4-install-python-project-requirements" title="Permalink to this heading">#</a></h2>
+<p>At this point, review the <strong><a class="reference external" href="http://requirements.in">requirements.in</a></strong> file. It has been pre-configured
+for a basic <em>Jupyter</em> project. You will need to list any <em>Python</em> support
+libraries you need for this project.</p>
+<p>Since I use <strong>make</strong> for many tasks, here is how I install these requirements. (Look at the <strong>mk</strong> directory to see the <strong>Makefile</strong> components that do the real work.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make pyreqs
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a note</p>
-</div>
+</section>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -439,20 +466,20 @@ $ make pyprep
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="01-lecture.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">CFD and HPC Lecture</p>
+        <p class="prev-next-title">A Short History of CFD and High Performance Computing</p>
       </div>
     </a>
     <a class="right-next"
-       href="01-lecture.html"
+       href="bibliography.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">A Short History of CFD and High Performance Computing</p>
+        <p class="prev-next-title">Bibliography</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -465,6 +492,24 @@ $ make pyprep
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-create-a-project-directory">Step 1. Create a project directory:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-the-local-directories-needed">Step 2. Create the local directories needed:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-the-working-python-environment">Step 3. Create the working <em>Python</em> environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-python-project-requirements">Step 4. Install <em>Python</em> Project Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
