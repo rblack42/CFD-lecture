@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: setup-process
 - file: 01-lecture
+- file: setup-process
 
 - file: bibliography
