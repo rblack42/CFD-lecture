@@ -391,12 +391,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-this-the-end">Is This the End?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baby-machines">Baby Machines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-computers">Custom Computers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">What ABout AI?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enough-computer-history-time-for-cfd">Enough Computer History, time for CFD!</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axisymmetric-hypersonic-flow">Axisymmetric Hypersonic flow</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 </ul>
             </nav>
         </div>
@@ -447,7 +449,7 @@ document.write(`
 <h2>The Numerical Wind Tunnel<a class="headerlink" href="#the-numerical-wind-tunnel" title="Permalink to this heading">#</a></h2>
 <p>Wouldn’t it be nice to do away with all that model machining and take a design straight off of paper and plug it into some computerized model and get the same data much more easily and at a much lower cost? Shoot, we could vary model and fluid parameters and use our “Numerical Wind Tunnel” to refine the design without touching anything metal!</p>
 <p>That was our goal back in the 1970s when I was assigned as a research scientist at the <em>Aerospace Research Laboratory</em> at <em>Wright-Patterson Air Force Base</em> in Dayton, Ohio - home of the <em>Wight Brothers</em>, who actually flew off of a field that is now part of the base. (I even learned to fly over that same field - cool!)</p>
-<p>That idea has been the “Holy Grail” of COmputational Aeronautical Engineering for as long as computers became powerful enough to make that idea seem practical!</p>
+<p>That idea has been the “Holy Grail” of Computational Aeronautical Engineering for as long as computers became powerful enough to make that idea seem practical!</p>
 <p>But it took a long time to get computers to that point. Let’s take a quick look at how computers developed and how “Computational Fluid Dynamics” really got started.</p>
 </section>
 <section id="scientist-or-engineer">
@@ -521,7 +523,7 @@ document.write(`
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/ibm-360.png"><img alt="IBM-360" class="bg-primary mb-1 align-center" src="_images/ibm-360.png" style="width: 400px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Programs were typed on “Punch Machines,” which produced one 80-character line of text per card. My Master’s Thesis code fit in a metal tray about two feet long and had a nice leather handle to carry it. I slid that tray through a window to a technician, and usually a day later, got my tray back along with a huge pile of paper with the printed results!</p>
+<p>Programs were typed on “Key Punch Machines,” which produced one 80-character line of text per card. My Master’s Thesis was a stack of cards that fit in a metal tray about two feet long and had a nice leather handle to carry it. I slid that tray through a window to a technician, and usually a day later, got my tray back along with a huge pile of paper with the printed results!</p>
 </div>
 <p>By this time, transistors had been perfected, and the tubes and relays had disappeared. This made for cooler (temperature) machines that used less power. It also made them less expensive and much smaller.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/SmallTransistor.jpg"><img alt="Early Transistor" class="bg-primary mb-1 align-center" src="_images/SmallTransistor.jpg" style="width: 400px;" /></a>
@@ -537,7 +539,8 @@ document.write(`
 <p>My first serious CFD code was developed on this machine and solved hypersonic flow over a simple missile flying at zero degrees angle-of-attack (axisymmetric flow) at Mach 6. It took 10 minutes of this machine’s dedicated crunching time to get a printed result. I might be lucky and get the results on a magnetic tape I could later process to generate graphics displays, but such power was very new, and few knew how to make pictures appear. Sometimes we used pen plotters to draw graphics, but often we plotted things by hand! Sad!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Around 1976, I  got a month-long assignment at <em>NASA Ames Research Center</em> in Mountain View, California, and took my code there. I made a movie showing the evolving solution. I will show this video after this lecture. (It is available in the lecture GitHub repository)</p>
+<p>Around 1976, I  got a month-long assignment at <em>NASA Ames Research Center</em> in Mountain View, California, and took my code there. I made a movie showing the evolving results:</p>
+<p><a class="reference external" href="https://www.co-pylit.org/static/video/CFD-NASA.mp4">PNS Solution - Conical Flow</a></p>
 </div>
 </section>
 <section id="illiac-iv">
@@ -550,6 +553,7 @@ document.write(`
 <section id="serious-supercomputers">
 <h2>Serious Supercomputers<a class="headerlink" href="#serious-supercomputers" title="Permalink to this heading">#</a></h2>
 <p>Seymore Cray got tired of working for CDC, and took several of the engineers with him to form *Cray Research”. Seymore designed a new machine that was designed for serious number crunching. Instead of setting up a simple two-number-adding device, he designed one that added two sets of 64 numbers together all at the same time. This was called a vector machine. He used some clever tricks to make his system go faster, one called pipelining, which broke up a single long-running operation into a sequence of steps, each running quickly. More input data could be loaded into the first stage since, as soon as the first stage was complete, it could accent new input rather than waiting until all stages were completed.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/Cray-1.jpg"><img alt="Cray-1" class="bg-primary mb-1 align-center" src="_images/Cray-1.jpg" style="width: 400px;" /></a>
 <p>The Cray-1 was an $8 million machine with 8 MB of memory. It was capable of 160 MFLOPS, which was impressive in its day!</p>
 <p>Vector machines had one problem. To maximize efficiency, you needed to make sure you had 64 numbers to add available simultaneously, so programming was pretty complex. This problem was eventually hidden behind supporting libraries and really smart compilers. Still, it took careful coding to really get speedy solutions.</p>
 <div class="admonition note">
@@ -568,7 +572,7 @@ document.write(`
 <p>This single board held an eight-bit chip, a staggering 1KB of ram, and an interface to a tape recorder. It had a seven-segment LED display for output and a way to connect it to a terminal of some kind. I used this device to learn assembly language, then worked through the Cray manuals to try to figure that language out. To my dismay, I discovered that each computer had a different assembly language! UGH!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Believe it or not, there was a chess game for this critter that fit in 1KB of memory! It cost me $250, and my boss freaked out when I hooked it up to a $12000 graphics terminal I used for early work on computer graphics for my CFD code.</p>
+<p>Believe it or not, there was a chess game for this critter that fit in 1KB of memory! The board cost $250, and my boss freaked out when I hooked it up to a $12000 graphics terminal I used for early work on computer graphics for my CFD code.</p>
 </div>
 <section id="shrinking-the-chips">
 <h3>Shrinking the Chips<a class="headerlink" href="#shrinking-the-chips" title="Permalink to this heading">#</a></h3>
@@ -579,32 +583,35 @@ document.write(`
 <p>Oh, and remember this! For each of the over a billion transistors we place on a chip, three wires are needed to hook it up to the other parts in a circuit! Those wires carry electrons that move at the speed of light, which is the limiting factor in defining the speed of our calculations!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Physical electrons, those funny gadgets that carry an electronic charge and spin around in each atom, do not actually move that fast. They only move at about one millimeter per second. It is an electromagnetic wave that moves at the speed of light.</p>
+<p>Physical electrons, those funny gadgets that carry an electric charge and spin around in each atom, do not actually move that fast between atoms. They only move between atoms at about one millimeter per second. A moving electron causes an electromagnetic wave that moves at the speed of light.</p>
 </div>
 </section>
 <section id="hitting-the-wall">
 <h3>Hitting the wall<a class="headerlink" href="#hitting-the-wall" title="Permalink to this heading">#</a></h3>
 <p>Eventually, we reached a point where making transistors smaller was pretty hard. But the computer processor parts were small enough that engineers had an idea. Why not put two processor chips on the silicon, interconnect them so they can share memory and input/output, and package a <em>dual-core</em> device. Intel released the <em>Pentium</em> dual-core processor in 1993.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/intel-dual-core.png"><img alt="Intel Dual-Cire Pentium" class="bg-primary mb-1 align-center" src="_images/intel-dual-core.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>These chips were built in a plant outside of Albuquerque, where I ran a Cray-2 supercomputer! I used to carry a Pentium chip on my key-chain, a gift from Intel when I toured the plant!</p>
+</div>
 </section>
 </section>
 <section id="multi-core-supercomputers">
 <h2>Multi-Core Supercomputers<a class="headerlink" href="#multi-core-supercomputers" title="Permalink to this heading">#</a></h2>
-<p>Using more than one processor in a pachine was not limited to just small machines. Seymore thought that would help his machines go faster as well.</p>
+<p>Using more than one processor in a machine was not limited to small machines. Seymore thought that would help his machines go faster as well.</p>
 </section>
 <section id="cray-2">
 <h2>Cray-2<a class="headerlink" href="#cray-2" title="Permalink to this heading">#</a></h2>
-<p>Seymore Cray was always looking for “More Power.” The problem was that running faster generated more heat and used more electricity. The Cray 2, introduced in 1985, was Cray’s first venture into a multi-core supercomputer. The design was unique. It had four processors and could reach 1.9 GFLOPS! The entire machine was emersed in an inert coolant that circulated through cooling towers to dissipate the heat! (It looked like a giant fish tank. (Not gold fish, “Cray Fish! Yuck, Yuck!) When it was introduced, it was the fastest machine on the planet!</p>
+<p>Seymore Cray was always looking for “More Power.” The problem was that running faster generated more heat and used more electricity. The Cray 2, introduced in 1985, was Cray’s first venture into a multi-core supercomputer. The design was unique. It had four processors and could reach 1.9 GFLOPS! The entire machine was emersed in an inert coolant that circulated through cooling towers to dissipate the heat! (It looked like a giant fish tank. (Not goldfish, “Cray Fish”! Yuck, Yuck!) When it was introduced, it was the fastest machine on the planet!</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/cray-2.jpg"><img alt="Cray-2 Supercomputer" class="bg-primary mb-1 align-center" src="_images/cray-2.jpg" style="width: 400px;" /></a>
 <p>It was so fast we used an IBM mainframe to feed it and extract the data from a run!</p>
 <p>Big Supercomputers like this continued to evolve. Many machines were developed that tried to compete with Cray, but the writing was on the wall! Those small “personal computers” were getting powerful enough to do some serious work. We also now had a nice network system, which began back when I was at ARL as the <em>ARPANET</em> and evolved into the <em>Internet</em>. By 1990, many machines could communicate and transfer data and code back and forth. Time for a new idea!</p>
 <section id="beowulf">
 <h3>Beowulf<a class="headerlink" href="#beowulf" title="Permalink to this heading">#</a></h3>
-<p>In 1998, NASA engineers thought that hooking up a number of machines using network technology would generate a useful machine. Techniques for passing data back and forth were developed using a scheme called <em>message passing</em>. These machines all ran a version of <em>Linux</em>, largely because it cost a lot to install something like <em>Windoze</em> on many machines. <em>Beowulf</em> was the name given to this architecture, and it started off a revolution.</p>
-<p>Suddenly, we could multiply the processing power of a single machine by the number of small machines we decided to set up. Well, not so fast! We still face the problem of transferring bits over a network.</p>
-<p>Grace Hopper, one of the first programmers on the Mark-1 team, used to carry a piece of wire 11.5 inches long to meetings. She would tell them: “This is how far electrons go in one nanosecond.”  That is one billionth of a second! Machines today are running at clock speeds of several billion ticks per second. That number is a bit misleading since floating point operations do not usually happen in a single clock tick.</p>
-<p>Simple networks could only move 10 million bits per second between machines. Not really fast, but as long as the program spends most of its time doing calculations, the data could keep up. Eventually, network speeds increased. Today we can reach a billion bits per second if you are willing to buy fast (more expensive) hardware.</p>
+<p>In 1998, NASA engineers thought that hooking up a number of machines using network technology would generate a useful machine. Techniques for passing data back and forth were developed using a scheme called <em>message passing</em>. These machines all ran a version of <em>Linux</em>, largely because it was way too expensive to install something like <em>Windoze</em> on many machines. <em>Beowulf</em> was the name given to this architecture, and it started off a revolution.</p>
+<p>Suddenly, we could multiply the processing power of a single machine by the number of small machines we decided to hook up. Well, not so fast! We still face the problem of transferring bits over a network.</p>
+<p>Grace Hopper, one of the first programmers on the Mark-1 team, used to carry a piece of wire 11.5 inches long to meetings. She would tell them: “This is how far electrons go in one nanosecond.”  That is one billionth of a second! Machines today are running at clock speeds of several billion ticks per second, so we actually need to worry about how far electrons need to move between internal components! Also, remember that floating point operations do not usually happen in a single clock tick.</p>
+<p>Simple networks could only move 10 million bits per second between machines. Not really fast, but as long as the program spends most of its time doing calculations, the data could keep up. Eventually, network speeds increased. Today we can reach over a billion bits per second if you are willing to buy fast (more expensive) hardware.</p>
 <p>Eventually, cluster software was developed, and the idea really took off. There were cluster machines popping up all over. Schools hooked up a lab full of computers to build a cluster.</p>
 <p>As machines got cheaper, folks like me bought several small machines for testing. I used Intel NUC computers to build a four-node cluster for testing in my home shop.</p>
 </section>
@@ -613,7 +620,14 @@ document.write(`
 <h2>Clustered Supercomputers.<a class="headerlink" href="#clustered-supercomputers" title="Permalink to this heading">#</a></h2>
 <p>Not to be outdone, the supercomputer world went to work on the bottleneck - the network. They started looking into ways to speed up the data transfer rate between independent machines. The results were impressive. Instead of moving data at one billion bits per second, they could reach speeds of over 200 Gbps!</p>
 <p>We are off and running again!</p>
-<p>Can we do better?</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/connection-machine.jpg"><img alt="COnnection Machine" class="bg-primary mb-1 align-center" src="_images/connection-machine.jpg" style="width: 400px;" /></a>
+<p>This machine, one of which I saw at Los Alamos National Laboratory in 1991, contained 65536 microprocessors, each with four kilobytes of memory.</p>
+<p>``{note}
+It was fun to watch all the blinky lights when this beast ran - especially in a dark room!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+Can we do better?
+</pre></div>
+</div>
 <section id="enter-the-gaming-folks">
 <h3>Enter the Gaming Folks!<a class="headerlink" href="#enter-the-gaming-folks" title="Permalink to this heading">#</a></h3>
 <p>One annoying development in the history of computers is the development of the greatest time-waster in history - the video game! Unfortunately, these things can suck productivity out of a player faster than a supercomputer!</p>
@@ -621,8 +635,8 @@ document.write(`
 <p>A video game displays millions of dots on a screen, each a specific color. Those dots are so tiny humans do not notice them. Each dot needs around 24 bits of data to define the color somewhere in the machine’s memory. If you want something on the screen to move, you must move many bits around in memory! There is also a lot of math needed to figure out if your moving object has bumped into some other object. The computer can do this work, but a lot of it is just a tedious repetition of some basic process. Why don’t we build some device to do that nasty work? Enter the <em>Graphics Processing Unit</em>, or <em>GPU</em></p>
 <p>The basic idea behind this gadget is simple; do the same operation on a bunch of different data. This is called <em>Single Instruction Multiple Data</em> or <strong>SIMD</strong>.</p>
 <p>There is more to these devices, but their development proceeded along, and some amazing boards were developed that make gamers very happy. (Not so much the space aliens, though!)</p>
-<p>Eventually, software folks discovered that they could develop code that could offload other kinds of processing on these boards. This processing did not reach a screen; the final results were back-loaded to the main computer running some serious application. Hey, the code got faster, costing several hundred dollars for each GPU board.</p>
-<p>Chip designers jumped on this idea as well and added small GPU devices to their processor chips, just like they did with multiple cores. The result is today’s supercomputer world! Huge numbers of small computer machines, all running Linux, most sporting the best GPU board they can find (or afford) and housed in big facilities where they can be powered and cooled.</p>
+<p>Eventually, software folks discovered that they could develop code that could offload other kinds of processing on these boards. This processing did not reach a screen; the final results were back-loaded to the main computer running some serious application. Hey, the code got faster, at a cost of several hundred dollars for each GPU board.</p>
+<p>Chip designers jumped on this idea as well and included small GPU devices on their processor chips, just like they did with multiple cores. The result is today’s supercomputer world! Huge numbers of small computer machines, all running Linux, most sporting the best GPU board they can find (or afford) and housed in big facilities where they can be powered and cooled.</p>
 </section>
 <section id="ncar-cheyenne-supercomputer">
 <h3>NCAR Cheyenne Supercomputer<a class="headerlink" href="#ncar-cheyenne-supercomputer" title="Permalink to this heading">#</a></h3>
@@ -669,11 +683,14 @@ document.write(`
 </section>
 <section id="custom-computers">
 <h3>Custom Computers<a class="headerlink" href="#custom-computers" title="Permalink to this heading">#</a></h3>
-<p>That little machine is still pretty general purpose. We can do better!</p>
+<p>That little machine is still pretty general-purpose, and only processes eight bits at a time. We can do enev better!</p>
 <p>We have been building computers, or rather, growing computers, for long enough to see basic patterns in how the chip hardware is laid out. Most current computers were designed with no thought (well, little thought) into the specific problems they will process. Chip designers have devised a tactic to build a chip with a pattern of basic parts and interconnects that can be programmed to create a specific design. Basically, we add code that hooks up the parts the way we want. These chips are called <em>Field Programmable Gate Arrays</em>. They offer another potential revolution in computing.</p>
-<p>What if we custom-design a chip to do our CFD problems? We can manufacture these custom chips as needed to build the machine we need for just our specific problem. Create custom boards to mount and power everything and run your problems! No operating system is needed, just your code and basic support code to make the calculations fly and the data move around!</p>
-<p>Is this even feasible? I can see a world where we start with our basic mathematical definition of the solution we want, add in a geometry of data points we will need to analyze the flow field, then let a sophisticated compiler assess the math and figure out how to interconnect our custom machines to generate a solver.</p>
-<p>Mix in some AI to tell us how to actually work where we need to work, not everywhere. If you watch a typical CFD program evolve a solution, you discover that there are many regions where nothing much is happening, yet we spend as much time doing work there as we do where things are really changing. Perhaps AI can help us figure out how to limit this wasted work.</p>
+<p>What if we custom-design a chip to do our CFD problems? We can manufacture these custom chips as needed to build the machine we need for just our specific problems. Create custom boards to mount and power everything and run your problems! No operating system is needed, just your code and basic support code to make the calculations fly and the data move around!</p>
+<p>Is this even feasible? I can see a world where we start with our basic mathematical definition of the solution we want, add in a geometry of data points we will need to analyze the flow field, then let a sophisticated compiler assess the math and figure out how to design and interconnect our custom machines to generate a solver.</p>
+</section>
+<section id="what-about-ai">
+<h3>What ABout AI?<a class="headerlink" href="#what-about-ai" title="Permalink to this heading">#</a></h3>
+<p>If we mix in some AI, we can probably figure out how to actually work only where we need to work, not everywhere. If you watch a typical CFD program evolve a solution, you discover that there are many regions where nothing much is happening, yet we spend as much time doing work there as we do where things are really changing. Perhaps AI can help us figure out how to limit this wasted work.</p>
 <p>How about a machine tuning itself to the evolving problem as it runs? If we can reprogram an FPGA, why not do that while a program runs?</p>
 <p>This kind of machine is not on the market yet, but the technology is here now.</p>
 <p>Your job is to step out of your basic aero mindset and think about what we might do in a future computer world; you dreamers might make your job more effective!</p>
@@ -695,8 +712,19 @@ document.write(`
 <p>What you ended up with was a procedure that could be marched in the axial direction (with the flow) exactly the same way we marched in time.</p>
 <p>For my experiments, I used a solution scheme developed by Robert MacCormack in 1969 at NASA Ames. It was called a “Predictor-Corrector* scheme, still in use today.</p>
 <p>I used an interesting scheme to avoid looping over the grid twice, once for the predictor step, then again for the corrector step. Instead, I set up a small “working array” to store predictor values. As soon as enough of these were available, I processed the corrector step and saved the final result back in memory. The CDC-6600 was a small memory machine, and this really helped!</p>
-<p>In 2003, the original Fortran code was translated into Fortran as part of my work on a second Master’s degree in COmputer Science. The final results can be seen in a Python animation!</p>
+<p>In 2003, the original Fortran code was translated into Python as part of my work on a second Master’s degree in Computer Science. The final results can be seen in a Python animation!</p>
 </section>
+</section>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>TODO: add animation code here</p>
+<p>The Parallel Challenge</p>
+<p>In your current course, you will focus on creating fairly simple solutions using a conventional computer. Odds are you will not be doing anything requiring more than one processor. However, when you get to serious CFD coding, your focus will change.</p>
+<p>At that point, you will be looking at the data you are processing and how it is distributed in memory. You will look at the physical number of operations you need to perform, and when those need to be done. You will also look at the bigger picture and see if some of those computations can happen independently of other computations, then ask yourself: “Can I move this block of operations to another machine?”</p>
+<p>Fortunately, there is help available.</p>
+<p>Modern Fortran compilers can help <em>parallelize</em> your code, but you will still need to help lay out things. It is challenging work, but the rewards are impressive.</p>
+<p>My hope is to upgrade my simple code here and run it on my baby cluster or one of my hot Mac machines with many cores and GPU units! Maybe one day I can run it on Cheyenne. It will probably not even notice that my code ran there! I certainly do not need 145000 processors for this problem!</p>
+<p>Have fun!</p>
 </section>
 </section>
 
@@ -805,12 +833,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-this-the-end">Is This the End?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baby-machines">Baby Machines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-computers">Custom Computers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">What ABout AI?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enough-computer-history-time-for-cfd">Enough Computer History, time for CFD!</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axisymmetric-hypersonic-flow">Axisymmetric Hypersonic flow</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 </ul>
   </nav></div>
 
