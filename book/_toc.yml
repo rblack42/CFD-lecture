@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 chapters:
 - file: 01-lecture
+- file: 02-property-animator
 - file: setup-process
 
 - file: bibliography
