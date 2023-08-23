@@ -18,13 +18,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-the final block makes the animation show up in this *Jupyterlab* notebook page - so you see the result right here!
+nx = 41
+dx = 2./(nx-1)
+nt = 20    #the number of timesteps we want to calculate
+nu = 0.3   #the value of viscosity
+dt = sigma*dx**2/nu #dt is defined using sigma ... more later!
 ------------------
 
 
-[0;36m  Cell [0;32mIn[16], line 1[0;36m[0m
-[0;31m    the final block makes the animation show up in this *Jupyterlab* notebook page - so you see the result right here![0m
-[0m        ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[3], line 5[0m
+[1;32m      3[0m nt [38;5;241m=[39m [38;5;241m20[39m    [38;5;66;03m#the number of timesteps we want to calculate[39;00m
+[1;32m      4[0m nu [38;5;241m=[39m [38;5;241m0.3[39m   [38;5;66;03m#the value of viscosity[39;00m
+[0;32m----> 5[0m dt [38;5;241m=[39m [43msigma[49m[38;5;241m*[39mdx[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m[38;5;241m/[39mnu [38;5;66;03m#dt is defined using sigma ... more later![39;00m
 
+[0;31mNameError[0m: name 'sigma' is not defined
 

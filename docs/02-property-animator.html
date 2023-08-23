@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '02-property-animator';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Setting up a Python Project" href="setup-process.html" />
+    <link rel="next" title="Experiments with findiff" href="03-findiff-experiments.html" />
     <link rel="prev" title="A Short History of CFD and High Performance Computing" href="01-lecture.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -159,6 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01-lecture.html">A Short History of CFD and High Performance Computing</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Property Animator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-findiff-experiments.html">Experiments with <strong>findiff</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-process.html">Setting up a Python Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
@@ -410,21 +411,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Next</span><span class="p">,</span> <span class="n">we</span> <span class="n">create</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">property</span> <span class="n">names</span><span class="o">.</span> <span class="n">These</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">annotate</span> <span class="n">the</span> <span class="n">graphics</span> <span class="n">display</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">Next</span><span class="p">,</span> <span class="n">we</span> <span class="n">create</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">property</span> <span class="n">names</span><span class="o">.</span> <span class="n">These</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">annotate</span> <span class="n">the</span> <span class="n">graphics</span> <span class="n">display</span><span class="o">.</span>
-             <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
+<p>Next, we create a list of property names. These will be used to annotate the graphics display.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">propNames</span> <span class="o">=</span> <span class="p">[</span>
@@ -441,7 +428,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>NOw, we can import the animation code. (Not shown here but included in the letcure repository on GitHub.</p>
+<p>Now, we can import the animation code. (Not shown here but included in the letcure repository on GitHub.</p>
 <p>We run code that loads data from the solution data file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -467,6 +454,11 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set figure x bounds</span>
 <span class="n">xRange</span> <span class="o">=</span> <span class="n">pmax</span><span class="o">-</span><span class="n">pmin</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pmax</span><span class="p">,</span><span class="n">pmin</span><span class="p">,</span><span class="n">xRange</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.23037 0.01906 3.21131
 </pre></div>
 </div>
 </div>
@@ -496,8 +488,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 4)
+</pre></div>
 </div>
-<p>The next block of code creates the basic grid we will use for the animation.</p>
+</div>
+</div>
 <p>The next code block creates the basic grid we will use for the animation. In the running notebook (not the web page) you will see the grid before we add the actual data display.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -515,6 +511,9 @@ document.write(`
 <span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/359ca60cf388e5ad35dbc9f1fb2daf526611b9f44795936caa82b188ac0bbac6.png" src="_images/359ca60cf388e5ad35dbc9f1fb2daf526611b9f44795936caa82b188ac0bbac6.png" />
 </div>
 </div>
 <p>We initialize a pair of lists which will end up holding the <strong>(X,Y)</strong> points to plot. This is done in the <strong>init</strong> routine. The animation is created by copying data from the solution file for each iteration of the code into this pair of lists. We will not actually do that copy work. Instead <strong>matplotlib</strong> will call the <strong>fetchDataLine</strong> routine, passing in an index number to select a column of data. This is called as needed to create the animation.</p>
@@ -562,13 +561,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>the final block makes the animation show up in this *Jupyterlab* notebook page - so you see the result right here!
-</pre></div>
-</div>
-</div>
-</div>
+<p>the final block makes the animation show up in this <em>Jupyterlab</em> notebook page - so you see the result right here!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">anim</span><span class="o">.</span><span class="n">to_html5_video</span><span class="p">())</span>
@@ -4614,11 +4607,11 @@ AAAAAAAAACxpbHN0AAAAJKl0b28AAAAcZGF0YQAAAAEAAAAATGF2ZjYwLjMuMTAw
       </div>
     </a>
     <a class="right-next"
-       href="setup-process.html"
+       href="03-findiff-experiments.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setting up a Python Project</p>
+        <p class="prev-next-title">Experiments with <strong>findiff</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

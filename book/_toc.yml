@@ -1,11 +1,11 @@
 # Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
 root: intro
 chapters:
 - file: 01-lecture
 - file: 02-property-animator
+- file: 03-findiff-experiments
 - file: setup-process
 
 - file: bibliography

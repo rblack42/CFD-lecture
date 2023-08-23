@@ -159,6 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">A Short History of CFD and High Performance Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-property-animator.html">Property Animator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-findiff-experiments.html">Experiments with <strong>findiff</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-process.html">Setting up a Python Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
@@ -399,7 +400,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axisymmetric-hypersonic-flow">Axisymmetric Hypersonic flow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-challenge">The Parallel Challenge</a></li>
 </ul>
             </nav>
         </div>
@@ -469,8 +470,8 @@ document.write(`
 <p>Since flying was hard, most scientists only dreamed of doing that “someday.” The mathematicians were not going to wait. They wanted to understand what was going on up in that air stuff.</p>
 <p>Back in 1687, Isaac Newton came up with a few rules that described how things move. Around the same time, Gottfried Leibniz developed calculus. In 1715, Brooke Taylor developed a way to represent a function as an infinite series of derivatives of that function. In 1850, William Rankine worked out a few laws of thermodynamics, which enabled us to describe how energy could be added to the mix. Finally, in 1822, Claude-Louis Navier and, later in 1850, George Stokes together produced what we now call the continuity and momentum equations. Mix in a few principles from chemistry, and all we need now is a way to solve this complex system of equations.</p>
 <p>The <em>Navier-Stokes Equations</em> assume that our fluid, air, is a continuous medium. These equations describe how a set of fundamental physical properties change from place to place and from moment to moment. The equations are hard to derive and even harder to solve.</p>
-<p>Back when these equations were first written down, the scientists of the day could not find any complete solutions to these equations. What they could do was slice off terms, hoping to get to a point where they could solve something. They had some success in this work, and many of the simplified techniques they developed helped power the evolution of flying vehicles.</p>
-<p>Eventually, mathematicians, including Isaac Newton, worked on representing the derivatives of a function as an infinite series of simple terms - and the <em>finite difference</em> was born. That allowed them to take extremely complex differential equations and <em>approximate</em> them with algebraic equations. There was some hope we could solve those, but the calculations would be tough to do. Grinding through the calculations was going to take a <em>long</em> time. Also, in working with these approximate equations, we introduced errors in the solutions. We would need to study those errors to decide if we liked the answers we were getting!</p>
+<p>Back when these equations were first written down, the scientists of the day could not find any complete solutions to them. What they could do was slice off terms, hoping to get to a point where they could solve something. They had some success in this work, and many of the simplified techniques they developed helped power the evolution of flying vehicles.</p>
+<p>Eventually, mathematicians, including Isaac Newton, worked on representing the derivatives of a function as an infinite series of simple terms and the <em>finite difference</em> was born. That allowed them to take extremely complex differential equations and <em>approximate</em> them with algebraic equations. There was some hope we could solve those, but the calculations would be tough. Grinding through the calculations was going to take a <em>long</em> time. Also, in working with these approximate equations, we introduced errors in the solutions. We would need to study those errors to decide if we liked the answers we were getting!</p>
 <p>At this point, we really needed some help to do the boring <em>number-crunching</em> work. We now need to see how computers came to enter the picture!</p>
 </section>
 <section id="basic-computers">
@@ -515,6 +516,7 @@ document.write(`
 <p>Von Neumann’s work heavily influenced the design of the first fully electronic computer, which was first fired up in 1945:</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/eniac.png"><img alt="ENIAC - First Electronic Computer" class="bg-primary mb-1 align-center" src="_images/eniac.png" style="width: 400px;" /></a>
 <p>This beast had 17,000 vacuum tubes, and 1500 relays, weighed 30 tons, and it cost $487,000 back then! Programming was done using “patch panels,” which were basically wires plugged into special sockets, and eventually using punched cards. There was no high-level language! But it worked, and computer science took off!</p>
+<p>This machine was designed by J Presper Eckert and John Machly, who went on to form what is now the <em>Unisys Corporation</em>. I met Dr. Eckert at a meeting of the Philidelphia Area Computer Society sometime around 1982, where they demonstrated the Commodore 64 and compared it to ENIAC <span id="id1">[<a class="reference internal" href="bibliography.html#id7" title="Stephen Longo. The data bus. The Data Bus, 1983.">Lon83</a>]</span>!</p>
 </section>
 </section>
 <section id="the-mainframe-era">
@@ -713,18 +715,23 @@ Can we do better?
 <p>What you ended up with was a procedure that could be marched in the axial direction (with the flow) exactly the same way we marched in time.</p>
 <p>For my experiments, I used a solution scheme developed by Robert MacCormack in 1969 at NASA Ames. It was called a “Predictor-Corrector* scheme, still in use today.</p>
 <p>I used an interesting scheme to avoid looping over the grid twice, once for the predictor step, then again for the corrector step. Instead, I set up a small “working array” to store predictor values. As soon as enough of these were available, I processed the corrector step and saved the final result back in memory. The CDC-6600 was a small memory machine, and this really helped!</p>
-<p>In 2003, the original Fortran code was translated into Python as part of my work on a second Master’s degree in Computer Science. The final results can be seen in a Python animation!</p>
+<p>In 2003, the original Fortran code was translated into Python as part of my work on a second Master’s degree in Computer Science. The final results can be seen in a Python animation included with this lecture on GitHub!</p>
+<p>Here are some timings from running this code on different machines:</p>
+<ul class="simple">
+<li><p>1975: CDC-6600 - 10 minutes (Fortran IV)</p></li>
+<li><p>2003: Dell Pentium laptop: 5 seconds (Python)</p></li>
+<li><p>2023: Apple Macbook Pro (M1 Max) 0.16 second (Python)</p></li>
+<li><p>2023: Raspberry Pi: 1 second ($55)</p></li>
+</ul>
 </section>
 </section>
-<section id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p>TODO: add animation code here</p>
-<p>The Parallel Challenge</p>
+<section id="the-parallel-challenge">
+<h2>The Parallel Challenge<a class="headerlink" href="#the-parallel-challenge" title="Permalink to this heading">#</a></h2>
 <p>In your current course, you will focus on creating fairly simple solutions using a conventional computer. Odds are you will not be doing anything requiring more than one processor. However, when you get to serious CFD coding, your focus will change.</p>
-<p>At that point, you will be looking at the data you are processing and how it is distributed in memory. You will look at the physical number of operations you need to perform, and when those need to be done. You will also look at the bigger picture and see if some of those computations can happen independently of other computations, then ask yourself: “Can I move this block of operations to another machine?”</p>
+<p>At that point, you will look at the data you are processing and how it is distributed in memory. You will look at the physical number of operations you need to perform and when those need to be done. You will also look at the bigger picture and see if some of those computations can happen independently of others, then ask yourself: “Can I move this block of operations to another machine?”</p>
 <p>Fortunately, there is help available.</p>
-<p>Modern Fortran compilers can help <em>parallelize</em> your code, but you will still need to help lay out things. It is challenging work, but the rewards are impressive.</p>
-<p>My hope is to upgrade my simple code here and run it on my baby cluster or one of my hot Mac machines with many cores and GPU units! Maybe one day I can run it on Cheyenne. It will probably not even notice that my code ran there! I certainly do not need 145000 processors for this problem!</p>
+<p>Modern Fortran compilers can help <em>parallelize</em> your code, but you will still need to help lay out things. It is challenging work, but the rewards can be impressive.</p>
+<p>I hope to upgrade my simple code here and run it on my baby cluster or one of my hot Mac machines with many cores and GPU units! Maybe one day I can run it on Cheyenne. It will probably not even notice that my code ran there! I certainly do not need 145000 processors for this problem!</p>
 <p>Have fun!</p>
 </section>
 </section>
@@ -841,7 +848,7 @@ Can we do better?
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axisymmetric-hypersonic-flow">Axisymmetric Hypersonic flow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-parallel-challenge">The Parallel Challenge</a></li>
 </ul>
   </nav></div>
 
