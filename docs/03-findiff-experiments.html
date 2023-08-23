@@ -381,8 +381,8 @@ document.write(`
 <section id="burgers-equation">
 <h2>Burger’s Equation<a class="headerlink" href="#burgers-equation" title="Permalink to this heading">#</a></h2>
 <p>The first example we will consider is <a class="reference external" href="http://en.wikipedia.org/wiki/Burgers%27_equation">Burger’s Equation</a> using the example from Lorena Barba’s CFD Python: the 12 steps to Navier-Stokes equations <span id="id1">[<a class="reference internal" href="bibliography.html#id4" title="Lorena Barba and Gilbert Forsyth. Cfd python: the 12 steps to navier-stokes equations. Journal of Open Source Education, 2(16):21, 2019. URL: https://doi.org/10.21105/jose.00021, doi:10.21105/jose.00021.">BF19</a>]</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d6e8b140-c613-4a00-8b03-08ebe3f2bb78">
-<span class="eqno">(1)<a class="headerlink" href="#equation-d6e8b140-c613-4a00-8b03-08ebe3f2bb78" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d099f6e8-0fc3-415f-b6c0-bb887da198d1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-d099f6e8-0fc3-415f-b6c0-bb887da198d1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu\frac{\partial^2 u}{\partial x^2}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -393,12 +393,12 @@ document.write(`
 </div>
 </div>
 <p>There is an analytic solution available for this equation, useful for checking errors:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65a6bf97-f1f0-4d5e-8993-1d726f3c18bf">
-<span class="eqno">(2)<a class="headerlink" href="#equation-65a6bf97-f1f0-4d5e-8993-1d726f3c18bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8ffe8c84-59b2-417b-91ef-8dfae151bfd2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-8ffe8c84-59b2-417b-91ef-8dfae151bfd2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u = - \frac{2\nu}{\phi}\frac{\partial \phi}{\partial x} + 4
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-c847fe9c-9d4a-453e-9921-a52bdee8ad60">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c847fe9c-9d4a-453e-9921-a52bdee8ad60" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1377531b-acff-4942-9977-e0b06caa77e7">
+<span class="eqno">(3)<a class="headerlink" href="#equation-1377531b-acff-4942-9977-e0b06caa77e7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \phi = exp \Bigl(\frac{-(x - 4t)^2}{4\nu(t + 1} \Bigr) + exp\Bigl( \frac{-(x - 4t - 2\pi)}{4\nu}\Bigr)
 \end{equation}\]</div>
 <div class="math notranslate nohighlight">
@@ -406,13 +406,13 @@ u = - \frac{2\nu}{\phi}\frac{\partial \phi}{\partial x} + 4
 <p>As before, once we have an initial condition, the only unknown is <span class="math notranslate nohighlight">\(u_i^{n+1}\)</span>. We will step in time as follows:</p>
 <div class="math notranslate nohighlight">
 \[u_i^{n+1} = u_i - u_i \frac{\Delta t}{\Delta x} (u_i - u_{i-1}) + \nu \frac{\Delta t}{\Delta x^2}(u_{i+1} - 2u_i + u_{i-1})\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d8512889-923a-4d9a-9a94-0f51182d6930">
-<span class="eqno">(4)<a class="headerlink" href="#equation-d8512889-923a-4d9a-9a94-0f51182d6930" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-ca0626e0-0c33-4e48-be6c-b8cd27f80ff9">
+<span class="eqno">(4)<a class="headerlink" href="#equation-ca0626e0-0c33-4e48-be6c-b8cd27f80ff9" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
     u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
     \phi &amp;= \exp \bigg(\frac{-x^2}{4 \nu} \bigg) + \exp \bigg(\frac{-(x-2 \\pi)^2}{4 \nu} \bigg)
 \end{eqnarray}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-edcf251a-8ee3-4eb1-bb54-a78d8ec65442">
-<span class="eqno">(5)<a class="headerlink" href="#equation-edcf251a-8ee3-4eb1-bb54-a78d8ec65442" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-c56156fa-62bf-43eb-8e02-f97fc5b0b053">
+<span class="eqno">(5)<a class="headerlink" href="#equation-c56156fa-62bf-43eb-8e02-f97fc5b0b053" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
 \phi &amp;= \exp \bigg(\frac{-(x-4t)^2}{4 \nu (t+1)} \bigg) + \exp \bigg(\frac{-(x-4t -2 \pi)^2}{4 \nu(t+1)} \bigg)
 \end{eqnarray}\]</div>
@@ -469,11 +469,12 @@ u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
     <span class="n">un</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">u</span><span class="p">[:]</span> <span class="c1">##copy the existing values of u into un</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nx</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">un</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nu</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">un</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">un</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">un</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        
 </pre></div>
 </div>
 </div>
 </div>
+<p>Notice that we only perform this loop from the second point to one less than the last point in the <strong>u</strong> aray. The two end points are left untouched. This establishes the boundary conditions for the solution.</p>
+<p>when this code completes, we can display the final solution (well, the solution after the number of time steps we chose).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">nx</span><span class="p">),</span> <span class="n">u</span><span class="p">)</span>
@@ -481,7 +482,7 @@ u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11780f710&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11543ea90&gt;]
 </pre></div>
 </div>
 <img alt="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" src="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" />
