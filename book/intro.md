@@ -1,6 +1,6 @@
 # CFD and HPC Lecture
 
-This lecture was put together for an advanced class in *Computstional Fluid
+This lecture was put together for an introductory class in *Computstional Fluid
 Dynamics at the *University of Kansas* in August, 2023. This lecture is a brief
 look at the history of CFD and High Performance Computing, not a deep look at
 CFD itself. 
