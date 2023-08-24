@@ -163,6 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="02-property-animator.html">Property Animator</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Experiments with <strong>findiff</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-process.html">Setting up a Python Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biography.html">Roie Black: Biography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -381,8 +382,8 @@ document.write(`
 <section id="burgers-equation">
 <h2>Burger’s Equation<a class="headerlink" href="#burgers-equation" title="Permalink to this heading">#</a></h2>
 <p>The first example we will consider is <a class="reference external" href="http://en.wikipedia.org/wiki/Burgers%27_equation">Burger’s Equation</a> using the example from Lorena Barba’s CFD Python: the 12 steps to Navier-Stokes equations <span id="id1">[<a class="reference internal" href="bibliography.html#id4" title="Lorena Barba and Gilbert Forsyth. Cfd python: the 12 steps to navier-stokes equations. Journal of Open Source Education, 2(16):21, 2019. URL: https://doi.org/10.21105/jose.00021, doi:10.21105/jose.00021.">BF19</a>]</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d099f6e8-0fc3-415f-b6c0-bb887da198d1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-d099f6e8-0fc3-415f-b6c0-bb887da198d1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-08a8e7ed-5086-457d-baf1-2321521e5372">
+<span class="eqno">(1)<a class="headerlink" href="#equation-08a8e7ed-5086-457d-baf1-2321521e5372" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu\frac{\partial^2 u}{\partial x^2}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -393,12 +394,12 @@ document.write(`
 </div>
 </div>
 <p>There is an analytic solution available for this equation, useful for checking errors:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8ffe8c84-59b2-417b-91ef-8dfae151bfd2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-8ffe8c84-59b2-417b-91ef-8dfae151bfd2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-360fbbb5-0217-40d7-8fdd-06a98d17e38c">
+<span class="eqno">(2)<a class="headerlink" href="#equation-360fbbb5-0217-40d7-8fdd-06a98d17e38c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u = - \frac{2\nu}{\phi}\frac{\partial \phi}{\partial x} + 4
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-1377531b-acff-4942-9977-e0b06caa77e7">
-<span class="eqno">(3)<a class="headerlink" href="#equation-1377531b-acff-4942-9977-e0b06caa77e7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-14375baf-b062-4a19-88b8-5ad2d4d3a5b6">
+<span class="eqno">(3)<a class="headerlink" href="#equation-14375baf-b062-4a19-88b8-5ad2d4d3a5b6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \phi = exp \Bigl(\frac{-(x - 4t)^2}{4\nu(t + 1} \Bigr) + exp\Bigl( \frac{-(x - 4t - 2\pi)}{4\nu}\Bigr)
 \end{equation}\]</div>
 <div class="math notranslate nohighlight">
@@ -406,13 +407,13 @@ u = - \frac{2\nu}{\phi}\frac{\partial \phi}{\partial x} + 4
 <p>As before, once we have an initial condition, the only unknown is <span class="math notranslate nohighlight">\(u_i^{n+1}\)</span>. We will step in time as follows:</p>
 <div class="math notranslate nohighlight">
 \[u_i^{n+1} = u_i - u_i \frac{\Delta t}{\Delta x} (u_i - u_{i-1}) + \nu \frac{\Delta t}{\Delta x^2}(u_{i+1} - 2u_i + u_{i-1})\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-ca0626e0-0c33-4e48-be6c-b8cd27f80ff9">
-<span class="eqno">(4)<a class="headerlink" href="#equation-ca0626e0-0c33-4e48-be6c-b8cd27f80ff9" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-b65479a5-50c5-447b-88e2-07ffa4cd0a3f">
+<span class="eqno">(4)<a class="headerlink" href="#equation-b65479a5-50c5-447b-88e2-07ffa4cd0a3f" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
     u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
     \phi &amp;= \exp \bigg(\frac{-x^2}{4 \nu} \bigg) + \exp \bigg(\frac{-(x-2 \\pi)^2}{4 \nu} \bigg)
 \end{eqnarray}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-c56156fa-62bf-43eb-8e02-f97fc5b0b053">
-<span class="eqno">(5)<a class="headerlink" href="#equation-c56156fa-62bf-43eb-8e02-f97fc5b0b053" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-5dd4b409-582b-4f79-96d1-875cf524fa22">
+<span class="eqno">(5)<a class="headerlink" href="#equation-5dd4b409-582b-4f79-96d1-875cf524fa22" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
 \phi &amp;= \exp \bigg(\frac{-(x-4t)^2}{4 \nu (t+1)} \bigg) + \exp \bigg(\frac{-(x-4t -2 \pi)^2}{4 \nu(t+1)} \bigg)
 \end{eqnarray}\]</div>
@@ -482,7 +483,7 @@ u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11543ea90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115538590&gt;]
 </pre></div>
 </div>
 <img alt="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" src="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" />
