@@ -159,7 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">A Short History of CFD and High Performance Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-property-animator.html">Property Animator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03-findiff-experiments.html">Experiments with <strong>findiff</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-findiff-experiments.html">Experiments with Burger’s Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-process.html">Setting up a Python Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="biography.html">Roie Black: Biography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
@@ -370,6 +370,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mainframe-era">The Mainframe Era</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transistor-revolution">The Transistor Revolution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supercomputers">Supercomputers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cdc-6600">CDC-6600</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illiac-iv">ILLIAC IV</a></li>
@@ -395,7 +396,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-this-the-end">Is This the End?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baby-machines">Baby Machines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-computers">Custom Computers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">What ABout AI?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">What About AI?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enough-computer-history-time-for-cfd">Enough Computer History, time for CFD!</a><ul class="nav section-nav flex-column">
@@ -489,6 +490,8 @@ document.write(`
 <p>These gadgets have been used since around 200 B.C.! I watched a merchant flip those beads when I bought one while on a trip to China in 1995. It was an amazing experience!</p>
 <p>This is not really a machine. But it did help humans track things as they did “arithmetic!”</p>
 <p>Building actual machines that could help us humans do math was a long, arduous process. We had problems constructing machines with the complexity to do much, even adding and subtracting! Eventually, we managed to come up with some clever machines. Some worked, but many did not!</p>
+<p>This is Charles Babbage’s <em>Analytical Engine</em> from 1834. Ada Agusta Lovelace thought up the idea of “programming” this thing using wooden punch cards from the Jacquard Loom developed in 1804.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/babbage-engine.png"><img alt="Babbage Analytical Engine" class="bg-primary mb-1 align-center" src="_images/babbage-engine.png" style="width: 500px;" /></a>
 <p>Here is a <em>Curta Calculator</em> that appeared right after World War II. I used this beast in my early aero classes when the professors wanted more accuracy than I could get from my trusty slide rule!</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/CurtaCalculator.jpg"><img alt="Curta Calculator" class="bg-primary mb-1 align-center" src="_images/CurtaCalculator.jpg" style="width: 500px;" /></a>
 </section>
@@ -500,7 +503,7 @@ document.write(`
 <h3>Harvard Mark I<a class="headerlink" href="#harvard-mark-i" title="Permalink to this heading">#</a></h3>
 <p>In 1944, Howard Aiken at Harvard University constructed an electro-mechanical machine using vacuum tubes, relays, and even motor-driven spinning mechanical gadgets that were common in calculators of the day. It worked, but it was hard to keep it running.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/Harvard-Mark-1.jpg"><img alt="Von Neumann Machine" class="bg-primary mb-1 align-center" src="_images/Harvard-Mark-1.jpg" style="width: 500px;" /></a>
-<p>Grace Hopper, the first female to reach the rank of Admiral in the U.S. Navy, worked on this machine and is considered one of the first computer programmers. (Ada Agusta Lovelace probably thought up the idea of programming around 1843!)</p>
+<p>Grace Hopper, the first female to reach the rank of Admiral in the U.S. Navy, worked on this machine and is considered one of the first computer programmers. (Ada Agusta Lovelace never actually programmed that machine she admired.)</p>
 </section>
 <section id="von-neumann">
 <h3>Von Neumann<a class="headerlink" href="#von-neumann" title="Permalink to this heading">#</a></h3>
@@ -526,13 +529,19 @@ document.write(`
 <section id="the-mainframe-era">
 <h2>The Mainframe Era<a class="headerlink" href="#the-mainframe-era" title="Permalink to this heading">#</a></h2>
 <p>Between 1945 and 1971, the computer world was dominated by mainframe computer systems. These machines were huge and very expensive. Only big corporations (and universities) could afford them. The machines were locked up in “machine rooms” where only trained technicians could actually touch them!</p>
-<p>In 1964, when I started my aerospace engineering degree at Virginia Tech, the school had an IBM-360 computer, nearly identical to the machines (six of them) that NASA used to land Apollo 11 on the Moon.</p>
+<p>In 1964, when I started my aerospace engineering degree at Virginia Tech, the school had an IBM-360 computer, nearly identical to the machines (six of them) that NASA used to land Apollo 11 on the Moon. The language all engineers used on this machine was Fortran!</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/ibm-360.png"><img alt="IBM-360" class="bg-primary mb-1 align-center" src="_images/ibm-360.png" style="width: 500px;" /></a>
+<p>I taught myself Fortran while working in the Flight Test Division at McDonnell Aircraft as a Cooperative Engineering Student. In 1968, I even got to sit in one of these airplanes in the hanger before the paint job was added!</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/thunderbirds.jpg"><img alt="Thunderbird F4 version" class="bg-primary mb-1 align-center" src="_images/thunderbirds.jpg" style="width: 500px;" /></a>
+<p>Working there was great motivation to do well in school!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Programs were typed on “Key Punch Machines,” which produced one 80-character line of text per card. My Master’s Thesis was a stack of cards that fit in a metal tray about two feet long and had a nice leather handle to carry it. I slid that tray through a window to a technician, and usually a day later, got my tray back along with a huge pile of paper with the printed results!</p>
 </div>
-<p>In 1956, John Bardeen, Walter Brattain, and William Shockley won the Nobel Prize for inventing the transistor. After that, the tubes and relays disappeared. This made for cooler (temperature) machines that used less power. It also made them less expensive and much smaller.</p>
+</section>
+<section id="the-transistor-revolution">
+<h2>The Transistor Revolution<a class="headerlink" href="#the-transistor-revolution" title="Permalink to this heading">#</a></h2>
+<p>In 1956, John Bardeen, Walter Brattain, and William Shockley won the Nobel Prize for inventing the transistor. This was a small device with no moving parts, and some amazing properties. It could create a simple switch easily, and became the primary component used in computer systems. After that, the tubes and relays disappeared. This made for cooler (temperature) machines that used less power. It also made them less expensive and much smaller.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/SmallTransistor.jpg"><img alt="Early Transistor" class="bg-primary mb-1 align-center" src="_images/SmallTransistor.jpg" style="width: 500px;" /></a>
 </section>
 <section id="supercomputers">
@@ -542,8 +551,8 @@ document.write(`
 <h3>CDC-6600<a class="headerlink" href="#cdc-6600" title="Permalink to this heading">#</a></h3>
 <p>Around 1964, Seymore Cray introduced the CDC-6600, one of which was installed at Wright-Patterson Air Force Base and running in 1973 when I was assigned as an Air Force research scientist after graduate school.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/cdc-6600.jpg"><img alt="CDC-6600 - First Supercomputer" class="bg-primary mb-1 align-center" src="_images/cdc-6600.jpg" style="width: 500px;" /></a>
-<p>This machine cost about $2.3 million and ran at 10MHz. It had 64-bit memory, all 982 kilobytes of it! This machine was where some serious CFD codes were being developed. The term “supercomputer” was first used to describe this machine, but it was hardly “super”!</p>
-<p>My first serious CFD code was developed on this machine and solved hypersonic flow over a simple missile flying at zero degrees angle-of-attack (axisymmetric flow) at Mach 6. It took 10 minutes of this machine’s dedicated crunching time to get a printed result. I might be lucky and get the results on a magnetic tape I could later process to generate graphics displays, but such power was very new, and few knew how to make pictures appear. Sometimes we used pen plotters to draw graphics, but often we plotted things by hand! Sad!</p>
+<p>This machine cost about $2.3 million and ran at 10MHz. It had 64-bit memory, all 982 kilobytes of it! This machine was where some serious CFD codes were being developed. The term “supercomputer” was first used to describe this machine, but it was hardly “super”! Your iPhone has much more power than this today!</p>
+<p>My first serious CFD code was developed on this machine and solved hypersonic flow over a simple missile flying at zero degrees angle-of-attack (axisymmetric flow) at Mach 6. It took 10 minutes of this machine’s dedicated crunching time to get a printed result. I might be lucky and get the results on a magnetic tape I could later process to generate graphics displays, but such power was very new, and few knew how to make pictures appear. Sometimes, we used pen plotters to draw graphics, but often, we plotted things by hand! Sad!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Around 1976, I  got a month-long assignment at <em>NASA Ames Research Center</em> in Mountain View, California, and took my code there. I made a movie showing the evolving results:</p>
@@ -571,12 +580,12 @@ document.write(`
 </section>
 <section id="the-dawn-of-the-integrated-circuit">
 <h2>The Dawn of the Integrated Circuit<a class="headerlink" href="#the-dawn-of-the-integrated-circuit" title="Permalink to this heading">#</a></h2>
-<p>In 1971, Intel Corporation released a magical chip called the <em>Intel 4004</em>. This small chip lived inside a 16-pin case and contained all the basic parts needed to create a 4-bit calculating device. It was supposed to end up in hand-help calculators, but its real impact was to show that we could build computing devices in this new way - with <em>integrated circuits</em>!</p>
+<p>In 1971, Intel Corporation released a magical chip called the <em>Intel 4004</em>. This small chip lived inside a 16-pin case and contained all the basic parts needed to create a 4-bit calculating device. It was supposed to end up in hand-held calculators, but its real impact was to show that we could build computing devices in this new way - with <em>integrated circuits</em>!</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/intel-4004.png"><img alt="Intel 4004 Integrated Circuit" class="bg-primary mb-1 align-center" src="_images/intel-4004.png" style="width: 400px;" /></a>
-<p>The 4004 was followed by a more useful one called the <em>Intel 8080</em>. Those chips ended up in the first computing device a normal human could buy if they were willing to build one from a kit!</p>
+<p>The 4004 was followed by a more useful eight-bit machine called the <em>Intel 8080</em>. Those chips ended up in the first computing device a normal human could buy if they were willing to build one from a kit!</p>
 <p>I could not quite afford the $450 it took to buy the kit, so I bought this gadget:</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/kim-1.png"><img alt="Kim-1 development board" class="bg-primary mb-1 align-center" src="_images/kim-1.png" style="width: 400px;" /></a>
-<p>This single board held an eight-bit chip, a staggering 1KB of ram, and an interface to a tape recorder. It had a seven-segment LED display for output and a way to connect it to a terminal of some kind. I used this device to learn assembly language, then worked through the Cray manuals to try to figure that language out. To my dismay, I discovered that each computer had a different assembly language! UGH!</p>
+<p>This single board held an eight-bit chip, a staggering 1KB of RAM, and an interface to a tape recorder. It had a seven-segment LED display for output and a way to connect it to a terminal or teletype machine. I used this device to learn assembly language, then worked through the Cray manuals to try to figure that language out. To my dismay, I discovered that each computer had a different assembly language! UGH!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Believe it or not, there was a chess game for this critter that fit in 1KB of memory! The board cost $250, and my boss freaked out when I hooked it up to a $12000 graphics terminal I used for early work on computer graphics for my CFD code.</p>
@@ -697,7 +706,7 @@ Can we do better?
 <p>Is this even feasible? I can see a world where we start with our basic mathematical definition of the solution we want, add in a geometry of data points we will need to analyze the flow field, then let a sophisticated compiler assess the math and figure out how to design and interconnect our custom machines to generate a solver.</p>
 </section>
 <section id="what-about-ai">
-<h3>What ABout AI?<a class="headerlink" href="#what-about-ai" title="Permalink to this heading">#</a></h3>
+<h3>What About AI?<a class="headerlink" href="#what-about-ai" title="Permalink to this heading">#</a></h3>
 <p>If we mix in some AI, we can probably figure out how to actually work only where we need to work, not everywhere. If you watch a typical CFD program evolve a solution, you discover that there are many regions where nothing much is happening, yet we spend as much time doing work there as we do where things are really changing. Perhaps AI can help us figure out how to limit this wasted work.</p>
 <p>How about a machine tuning itself to the evolving problem as it runs? If we can reprogram an FPGA, why not do that while a program runs?</p>
 <p>This kind of machine is not on the market yet, but the technology is here now.</p>
@@ -825,6 +834,7 @@ Can we do better?
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mainframe-era">The Mainframe Era</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-transistor-revolution">The Transistor Revolution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supercomputers">Supercomputers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cdc-6600">CDC-6600</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illiac-iv">ILLIAC IV</a></li>
@@ -850,7 +860,7 @@ Can we do better?
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-this-the-end">Is This the End?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baby-machines">Baby Machines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-computers">Custom Computers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">What ABout AI?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-ai">What About AI?</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enough-computer-history-time-for-cfd">Enough Computer History, time for CFD!</a><ul class="nav section-nav flex-column">

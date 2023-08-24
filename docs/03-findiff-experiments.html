@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Experiments with findiff &#8212; CFD-HPC Lecture</title>
+    <title>Experiments with Burger’s Equation &#8212; CFD-HPC Lecture</title>
   
   
   
@@ -161,7 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01-lecture.html">A Short History of CFD and High Performance Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-property-animator.html">Property Animator</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Experiments with <strong>findiff</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Experiments with Burger’s Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-process.html">Setting up a Python Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="biography.html">Roie Black: Biography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
@@ -349,7 +349,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Experiments with findiff</h1>
+    <h1>Experiments with Burger’s Equation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -359,7 +359,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#burgers-equation">Burger’s Equation</a></li>
 </ul>
             </nav>
@@ -372,21 +371,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="experiments-with-findiff">
-<h1>Experiments with <strong>findiff</strong><a class="headerlink" href="#experiments-with-findiff" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="experiments-with-burgers-equation">
+<h1>Experiments with Burger’s Equation<a class="headerlink" href="#experiments-with-burgers-equation" title="Permalink to this heading">#</a></h1>
 <p>The original code developed for this study was written in Fortran IV, and used global variables for everything! I rewrote that program in Python* in 2003 as part of a course in <em>Object Oriented Design</em>, but really did not tap into the real powerof modern <em>Python</em> libraries. My goal is to fix that problem.</p>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
-<p>The <strong>findiff</strong> package supports basic finite differences using arrays managed by <strong>numpy</strong>. In this page, we will work through an example of using this package, then apply the lessons learned to the PNS solver code.</p>
-<p><strong>findiff</strong> is installed using <strong>pip</strong>. Adding this requirement to <strong><a class="reference external" href="http://requirements.in">requirements.in</a></strong> and running <strong>make pyreqs</strong> will set things up. (Remember to do that and restart the <em>Jupyterlab</em> Kernel.</p>
-</section>
 <section id="burgers-equation">
 <h2>Burger’s Equation<a class="headerlink" href="#burgers-equation" title="Permalink to this heading">#</a></h2>
-<p>The first example we will consider is <a class="reference external" href="http://en.wikipedia.org/wiki/Burgers%27_equation">Burger’s Equation</a> using the example from Lorena Barba’s CFD Python: the 12 steps to Navier-Stokes equations <span id="id1">[<a class="reference internal" href="bibliography.html#id4" title="Lorena Barba and Gilbert Forsyth. Cfd python: the 12 steps to navier-stokes equations. Journal of Open Source Education, 2(16):21, 2019. URL: https://doi.org/10.21105/jose.00021, doi:10.21105/jose.00021.">BF19</a>]</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7697c6e2-a9d6-4fc2-a878-d28e3d8b4696">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7697c6e2-a9d6-4fc2-a878-d28e3d8b4696" title="Permalink to this equation">#</a></span>\[\begin{equation}
-\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu\frac{\partial^2 u}{\partial x^2}
-\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Initial Conditions</span>
@@ -395,26 +384,28 @@ document.write(`
 </div>
 </div>
 <p>There is an analytic solution available for this equation, useful for checking errors:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a7fc91fd-bfcb-4923-a0ab-55c509b0c9c7">
-<span class="eqno">(2)<a class="headerlink" href="#equation-a7fc91fd-bfcb-4923-a0ab-55c509b0c9c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c63efa5c-6c4d-4991-9aa5-1212f22381d2">
+<span class="eqno">(1)<a class="headerlink" href="#equation-c63efa5c-6c4d-4991-9aa5-1212f22381d2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u = - \frac{2\nu}{\phi}\frac{\partial \phi}{\partial x} + 4
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-e85c8502-423b-41ac-9a00-f13e371dfb01">
-<span class="eqno">(3)<a class="headerlink" href="#equation-e85c8502-423b-41ac-9a00-f13e371dfb01" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d45db1f2-f33b-4be9-96ec-acda3311ae21">
+<span class="eqno">(2)<a class="headerlink" href="#equation-d45db1f2-f33b-4be9-96ec-acda3311ae21" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \phi = exp \Bigl(\frac{-(x - 4t)^2}{4\nu(t + 1} \Bigr) + exp\Bigl( \frac{-(x - 4t - 2\pi)}{4\nu}\Bigr)
 \end{equation}\]</div>
+<p>A simple finite difference representation of this equation looks like this:</p>
 <div class="math notranslate nohighlight">
 \[\frac{u_i^{n+1}-u_i^n}{\Delta t} + u_i^n \frac{u_i^n - u_{i-1}}{\Delta x} = \nu \frac{u_{i+1} - 2u_i + u_{i-1}}{\Delta x^2}\]</div>
-<p>As before, once we have an initial condition, the only unknown is <span class="math notranslate nohighlight">\(u_i^{n+1}\)</span>. We will step in time as follows:</p>
+<p>Given an initial condition, the only unknown is <span class="math notranslate nohighlight">\(u_i^{n+1}\)</span>. We can “march” this code in time to see how the solution evolves.</p>
 <div class="math notranslate nohighlight">
 \[u_i^{n+1} = u_i - u_i \frac{\Delta t}{\Delta x} (u_i - u_{i-1}) + \nu \frac{\Delta t}{\Delta x^2}(u_{i+1} - 2u_i + u_{i-1})\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-e6acc726-c9f9-4c09-9c0d-2391ad843a9c">
-<span class="eqno">(4)<a class="headerlink" href="#equation-e6acc726-c9f9-4c09-9c0d-2391ad843a9c" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<p>Here is the analytic solution to this problem:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e8ec9e8a-a906-4e2d-90d4-71f103e28d5d">
+<span class="eqno">(3)<a class="headerlink" href="#equation-e8ec9e8a-a906-4e2d-90d4-71f103e28d5d" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
     u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
     \phi &amp;= \exp \bigg(\frac{-x^2}{4 \nu} \bigg) + \exp \bigg(\frac{-(x-2 \\pi)^2}{4 \nu} \bigg)
 \end{eqnarray}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-e97e95b1-99bf-4649-8731-3ee3ab07932c">
-<span class="eqno">(5)<a class="headerlink" href="#equation-e97e95b1-99bf-4649-8731-3ee3ab07932c" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-2f21f95f-4236-4a8e-bbca-0e745a8a6d01">
+<span class="eqno">(4)<a class="headerlink" href="#equation-2f21f95f-4236-4a8e-bbca-0e745a8a6d01" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
 \phi &amp;= \exp \bigg(\frac{-(x-4t)^2}{4 \nu (t+1)} \bigg) + \exp \bigg(\frac{-(x-4t -2 \pi)^2}{4 \nu(t+1)} \bigg)
 \end{eqnarray}\]</div>
@@ -484,7 +475,7 @@ u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12680e650&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11863e9d0&gt;]
 </pre></div>
 </div>
 <img alt="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" src="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" />
@@ -7813,7 +7804,6 @@ AExhdmY2MC4zLjEwMA==
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#burgers-equation">Burger’s Equation</a></li>
 </ul>
   </nav></div>
