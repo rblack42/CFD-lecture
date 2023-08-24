@@ -7,7 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - CFD-HPC Lecture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture Outline &#8212; CFD-HPC Lecture</title>
   
   
   
@@ -59,12 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '00-outline';</script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Bibliography" href="bibliography.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -92,7 +92,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -155,14 +155,14 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01-lecture.html">A Short History of CFD and High Performance Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02-property-animator.html">Property Animator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03-findiff-experiments.html">Experiments with <strong>findiff</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup-process.html">Setting up a Python Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="biography.html">Roie Black: Biography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-outline.html">Lecture Outline</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture Outline</a></li>
 </ul>
 
     </div>
@@ -234,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/rblack42/jupyter-project/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/rblack42/jupyter-project/issues/new?title=Issue%20on%20page%20%2F00-outline.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -246,6 +246,54 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/00-outline.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -294,42 +342,261 @@ document.write(`
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Search</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture Outline</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-outline">
+<h1>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Permalink to this heading">#</a></h1>
+<p>(* indicates picture, + indicates physical example)</p>
+<ol class="arabic simple">
+<li><p>How did you get here?</p>
+<ul class="simple">
+<li><p>Grow up in the Smithsonian (Wright Flyer *)</p></li>
+<li><p>Take a ride in a Connie (*)</p></li>
+</ul>
+</li>
+<li><p>Human Flight</p>
+<ul class="simple">
+<li><p>Build something and jump off a cliff</p>
+<ul>
+<li><p>DaVinci Ornithopter (*)</p></li>
+</ul>
+</li>
+<li><p>Models are safer</p>
+<ul>
+<li><p>Indoor models (*)</p></li>
+<li><p>Serious wind tunnel models (*)</p></li>
+<li><p>Another way? The Numerical Wind Tunnel</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The Math of Flight</p>
+<ul class="simple">
+<li><p>Leibnitz calculus (1684)</p></li>
+<li><p>Isaac Newton laws of motion (1687)</p></li>
+<li><p>Taylor Series (1715)</p></li>
+<li><p>Rankine laws of thermodynamics (1850)</p></li>
+<li><p>Navier Stokes (1822-1850)</p></li>
+<li><p>Add in gas laws</p></li>
+<li><p>Then find a way to solve them</p>
+<ul>
+<li><p>lop off terms to make them easier</p></li>
+<li><p>Potential flow - we could figure out airfoils!</p></li>
+</ul>
+</li>
+<li><p>We need a better way!</p></li>
+</ul>
+</li>
+<li><p>Basic Computers</p>
+<ul class="simple">
+<li><p>Abacus (*,+)</p></li>
+<li><p>Mechanical calculating machines</p>
+<ul>
+<li><p>Da Vinci drawing</p></li>
+<li><p>Blaise Pascal’s Pascaline (+)</p></li>
+<li><p>Babbage Engine</p>
+<ul>
+<li><p>Ada Agusta Lovelace invented programming (1843)</p></li>
+</ul>
+</li>
+<li><p>Curta Calculator (*,+)</p>
+<ul>
+<li><p>replaced my slide rule (+)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>World War II</p>
+<ul>
+<li><p>Harvard Mark 1 (1944) (+ book)</p>
+<ul>
+<li><p>Grace Hopper</p></li>
+</ul>
+</li>
+<li><p>John Von Neumanm describes a computer architecture (1945) (*)</p></li>
+<li><p>ENIAC (1945) (*.+)</p></li>
+</ul>
+</li>
+<li><p>Mainframe Era</p>
+<ul>
+<li><p>IBM 360 (1964) (*)</p>
+<ul>
+<li><p>powered Va Tech</p></li>
+<li><p>six at Johnson Space Center for Apollo</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Shockley’s Transistor ( (1956) (*,+)</p></li>
+</ul>
+</li>
+<li><p>Supercomputers</p>
+<ul class="simple">
+<li><p>CDC-6600 (1964) first “supercomputer” (*)</p>
+<ul>
+<li><p>Powered early CFD work (my PNS code)</p></li>
+</ul>
+</li>
+<li><p>ILLIAC IV at NASA Ames (*)</p>
+<ul>
+<li><p>First parallel machine</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Serious Supercomputers</p>
+<ul class="simple">
+<li><p>Cray-1 (1973) (*,+)</p>
+<ul>
+<li><p>first vector machine 64 numbers high!</p></li>
+<li><p>Programmed in assembly language initially!</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Integrated Circuits</p>
+<ul class="simple">
+<li><p>Intel 4004 (1971) (*)</p>
+<ul>
+<li><p>designed for calculators (4-bits)</p></li>
+</ul>
+</li>
+<li><p>Intel 8080</p>
+<ul>
+<li><p>first home computers</p></li>
+</ul>
+</li>
+<li><p>KIM-1 board (*)</p>
+<ul>
+<li><p>used as a trainer for Cray programming!</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Shrinking Chips</p>
+<ul class="simple">
+<li><p>8086 16-bit machine</p>
+<ul>
+<li><p>powered first IBM PCs</p></li>
+</ul>
+</li>
+<li><p>now at 3nm - 10-80 thousand times smaller than hair (+)</p></li>
+<li><p>IBM logo (1989) (*)</p></li>
+</ul>
+</li>
+<li><p>Hitting the Wall</p>
+<ul class="simple">
+<li><p>Intel “dual core” chip (1993) (*,+)
+10 Multi-Core Supercomputers</p></li>
+<li><p>Cray 2 (1985) 4 processors reached 1.9 GFLOPS! (*)</p></li>
+<li><p>Beowulf Clusters (+)</p>
+<ul>
+<li><p>small PCs on a network (NASA 1998)</p></li>
+<li><p>limited by network speed (Grace Hopper’s wire)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Clustered Supercomputers</p>
+<ul class="simple">
+<li><p>Connection Machine - 65536 microprocessors (*)</p></li>
+</ul>
+</li>
+<li><p>GPU Development</p>
+<ul class="simple">
+<li><p>Thank gamers for this</p></li>
+<li><p>GPU on a chip</p></li>
+</ul>
+</li>
+<li><p>Today’s machines</p>
+<ul class="simple">
+<li><p>NCAR Cheyenne 145000 Intel Xeon processors) (*)</p></li>
+<li><p>DOE Frontier (8699905 AMD chips) (*)</p></li>
+</ul>
+</li>
+<li><p>Custom Chips</p>
+<ul class="simple">
+<li><p>FPGA</p></li>
+<li><p>CFD Engines?</p>
+<ul>
+<li><p>AI Powered or designed?</p></li>
+<li><p>Adaptive machines</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CFD Today</p>
+<ul class="simple">
+<li><p>Early work in limited memory trained us to break problem up</p>
+<ul>
+<li><p>training for parallel machines</p></li>
+</ul>
+</li>
+<li><p>Start small, then build up</p>
+<ul>
+<li><p>axisymmetric flow - to full 3D</p></li>
+<li><p>MacCormack’s Predictor-Corrector</p></li>
+<li><p>Beam-Warming for better (more stable) solutions</p></li>
+</ul>
+</li>
+<li><p>Use Symbolic Math</p>
+<ul>
+<li><p>I validated Beam-Warming code using Macsyma at MIT</p></li>
+</ul>
+</li>
+<li><p>Parallel Programming</p>
+<ul>
+<li><p>Think your code through</p></li>
+<li><p>Use libraries like MPI to move data between machines</p></li>
+<li><p>Let advanced compilers help (Modern Fortran)</p></li>
+<li><p>Baby Clusters</p>
+<ul>
+<li><p>Raspberry Pi cluster - Cheap!</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
 
               
               
@@ -339,6 +606,15 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="bibliography.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+    </a>
 </div></div>
   
 </div>

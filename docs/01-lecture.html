@@ -163,6 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="setup-process.html">Setting up a Python Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="biography.html">Roie Black: Biography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-outline.html">Lecture Outline</a></li>
 </ul>
 
     </div>
@@ -417,35 +418,37 @@ document.write(`
 <h1>A Short History of CFD and High Performance Computing<a class="headerlink" href="#a-short-history-of-cfd-and-high-performance-computing" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The source files for this lecture are available at this <a class="reference external" href="https://github.com/rblack42/CFD-lecture">link</a>.</p>
+<p>The source files for this lecture are available at <a class="github reference external" href="https://github.com/rblack42/CFD-lecture">rblack42/CFD-lecture</a>.</p>
 </div>
 <section id="why-are-you-here">
 <h2>Why are you here?<a class="headerlink" href="#why-are-you-here" title="Permalink to this heading">#</a></h2>
 <p>Hopefully, like me, you are fascinated by flight and want to understand what makes it possible. That idea has been a part of human history for as long as people watched bird-like critters navigate the sky. How in the world do they do that? We might have been fascinated by flying insects, but we usually just want to swat those things!</p>
 <p>I was born in Washington, D.C. At about age three, I was introduced to the Smithsonian Institute, where I got a good look at my first airplane. Two years before I was born, Dr. Paul Garber, Curator Emeritus of the <em>Air and Space Museum</em>, brought the <em>Wright Flyer</em> back from England to be displayed there. Here is an image of its debut!</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/wright-flyer.png"><img alt="Wrigit Flyer Smithsonian Debut" class="bg-primary mb-1 align-center" src="_images/wright-flyer.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/wright-flyer.png"><img alt="Wright Flyer Smithsonian Debut" class="bg-primary mb-1 align-center" src="_images/wright-flyer.png" style="width: 500px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>I met Dr. Garber at a water fountain in 1956 when I was visiting the <em>American Aviation Historical Society</em> offices in the Smithsonian. Turns out a kid is too short to see the “Public Not Allowed Past this Point” signs, and I wandered into those offices one day. They let me help file papers, including a postcard from Glenn Curtiss to Orville Wright! They even took me out into the galleries and climb up a scaffold to get a close look at Curtiss’s 1910 Headless Pusher!</p>
+<p>I met Dr. Garber at a water fountain in 1956 when I was visiting the <em>American Aviation Historical Society</em> offices in the Smithsonian. Turns out a kid is too short to see the “Public Not Allowed Past this Point” signs, and I wandered into those offices one day. They let me help file papers, including a postcard from Glenn Curtiss to Orville Wright! They even took me out into the galleries and let me climb up a scaffold to get a close look at Curtiss’s 1910 Headless Pusher!</p>
 </div>
+<p>This airplane started flying in 1949, and I took my first ride on one two years later:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/Lockheed-Constellation.jpg"><img alt="Eastern Connie" class="bg-primary mb-1 align-center" src="_images/Lockheed-Constellation.jpg" style="width: 500px;" /></a>
 </section>
 <section id="human-flight">
 <h2>Human Flight<a class="headerlink" href="#human-flight" title="Permalink to this heading">#</a></h2>
 <p>When the idea of flying first struck humans, the best thing they could think to do was build a machine of some kind and jump off a cliff! Not very smart, but what else could you do? Perhaps make sure the cliff is very short!</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/DaVinci.jpg"><img alt="Da Vinci Flying Machine" class="bg-primary mb-1 align-center" src="_images/DaVinci.jpg" style="width: 400px;" /></a>
-<p>Leonardo was obviously interested in flight and produced many drawings of ideas for machines that might fly. (I have a set of DVDs with a copy of all of his drawings!) None of them were very practical, but they showed what folks were thinking about back around 1500.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/DaVinci.jpg"><img alt="Da Vinci Flying Machine" class="bg-primary mb-1 align-center" src="_images/DaVinci.jpg" style="width: 500px;" /></a>
+<p>Leonardo was obviously interested in flight and produced many drawings of ideas for machines that might fly. (I have a set of DVDs with a copy of all his drawings!) None of them were very practical, but they showed what folks were thinking about back around 1500.</p>
 <p>Eventually, it occurred to them that models of potential machines might save them some broken bones.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/lpp.gif"><img alt="Limiter Penny Plane" class="bg-primary mb-1 align-center" src="_images/lpp.gif" style="width: 400px;" /></a>
-<p>Most of you have never seen anything like this. This is my design for an indoor model airplane called a “Limited Penny Plane*, which must not weigh more than one U.S. Penny! A rubber band powers it. This kind of model has the potential to fly in a large auditorium for around 10 minutes. It cruises at a staggering 4 miles per hour!</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/lpp.gif"><img alt="Limiter Penny Plane" class="bg-primary mb-1 align-center" src="_images/lpp.gif" style="width: 500px;" /></a>
+<p>Most of you have never seen anything like this. This is my design for an indoor model airplane called a “Limited Penny Plane*, which must not weigh more than one U.S. Penny! <span id="id1">[<a class="reference internal" href="bibliography.html#id2" title="Roie Black. Designing an indoor model using openscad. NFFS Symposium, pages 65–84, 2021.">Bla21</a>]</span> A rubber band powers it. This kind of model has the potential to fly in a large auditorium for around 10 minutes. It cruises at a staggering 4 miles per hour!</p>
 <p>Figuring out how to build and fly machines like this was how I began my journey to become an Aerospace Engineer.</p>
 <p>Building real airplanes used to require building sophisticated models, usually made of metal, and mounting them in a <em>Wind Tunnel</em> that looked something like this:</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/yf-12-wind-tunnel.png"><img alt="YF-12 WInd Tunnel Model" class="bg-primary mb-1 align-center" src="_images/yf-12-wind-tunnel.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/yf-12-wind-tunnel.png"><img alt="YF-12 WInd Tunnel Model" class="bg-primary mb-1 align-center" src="_images/yf-12-wind-tunnel.png" style="width: 500px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This model shows the YF-12 design produced by the <em>Skunk Works</em> at Lockheed. It flew at Mach 3 in 1963! This design evolved into the SR-71 reconnaissance airplane. There are still a few of these flying today (at NASA!)</p>
 </div>
 <p>Obviously, building models like this one is a very expensive operation, and you really want to be sure the design is sound before committing to this!</p>
-<p>Wind tunnels have one big advantage, though. They use real air and blast it past the model at very high speeds giving us a very good way to figure out how the “real” airplane will fly.</p>
+<p>Wind tunnels have one big advantage, though. They use real air and blast it past the model at very high speeds, giving us a very good way to figure out how the “real” airplane will fly.</p>
 <p>That is, if we can figure out how to measure things. If you look closely, many probes are mounted on this model in front of the left engine nacelle. These will be used to measure some of the properties of the air moving by the model. This “experimental” data is vital in our work, especially when we try to develop new methods for predicting how a design will fly! Good CFD programs use wind tunnel data to validate their operation.</p>
 </section>
 <section id="the-numerical-wind-tunnel">
@@ -469,10 +472,10 @@ document.write(`
 <section id="the-mathematics-of-flight">
 <h2>The Mathematics of Flight<a class="headerlink" href="#the-mathematics-of-flight" title="Permalink to this heading">#</a></h2>
 <p>Since flying was hard, most scientists only dreamed of doing that “someday.” The mathematicians were not going to wait. They wanted to understand what was going on up in that air stuff.</p>
-<p>Back in 1687, Isaac Newton came up with a few rules that described how things move. Around the same time, Gottfried Leibniz developed calculus. In 1715, Brooke Taylor developed a way to represent a function as an infinite series of derivatives of that function. In 1850, William Rankine worked out a few laws of thermodynamics, which enabled us to describe how energy could be added to the mix. Finally, in 1822, Claude-Louis Navier and, later in 1850, George Stokes together produced what we now call the continuity and momentum equations. Mix in a few principles from chemistry, and all we need now is a way to solve this complex system of equations.</p>
+<p>Back in 1687, Isaac Newton came up with a few rules that described how things move. A few years earlier, Gottfried Leibniz developed calculus. In 1715, Brooke Taylor developed a way to represent a function as an infinite series of derivatives of that function. In 1822, Claude-Louis Navier and, later in 1850, George Stokes together produced what we now call the continuity and momentum equations. In 1850, William Rankine worked out a few laws of thermodynamics, which enabled us to describe how energy could be added to the mix. Finally, mix in a few principles from chemistry, and all we need now is a way to solve this complex system of equations.</p>
 <p>The <em>Navier-Stokes Equations</em> assume that our fluid, air, is a continuous medium. These equations describe how a set of fundamental physical properties change from place to place and from moment to moment. The equations are hard to derive and even harder to solve.</p>
-<p>Back when these equations were first written down, the scientists of the day could not find any complete solutions to them. What they could do was slice off terms, hoping to get to a point where they could solve something. They had some success in this work, and many of the simplified techniques they developed helped power the evolution of flying vehicles.</p>
-<p>Eventually, mathematicians, including Isaac Newton, worked on representing the derivatives of a function as an infinite series of simple terms and the <em>finite difference</em> was born. That allowed them to take extremely complex differential equations and <em>approximate</em> them with algebraic equations. There was some hope we could solve those, but the calculations would be tough. Grinding through the calculations was going to take a <em>long</em> time. Also, in working with these approximate equations, we introduced errors in the solutions. We would need to study those errors to decide if we liked the answers we were getting!</p>
+<p>Back when these equations were first written down, the scientists of the day could not find any complete solutions. What they could do was slice off terms, hoping to get to a point where they could solve something. They had some success in this work, and many of the simplified techniques they developed helped power the evolution of flying vehicles.</p>
+<p>Eventually, mathematicians, including Isaac Newton, worked on representing the derivatives of a function as an infinite series of simple terms, and the <em>finite difference</em> was born. That allowed them to take extremely complex differential equations and <em>approximate</em> them with algebraic equations. There was some hope we could solve those, but the calculations would be tough. Grinding through the calculations was going to take a <em>long</em> time. Also, in working with these approximate equations, we introduced errors in the solutions. We would need to study those errors to decide if we liked the answers we were getting!</p>
 <p>At this point, we really needed some help to do the boring <em>number-crunching</em> work. We now need to see how computers came to enter the picture!</p>
 </section>
 <section id="basic-computers">
@@ -482,12 +485,12 @@ document.write(`
 <div><p>Computers are stupid! They are just stupid so fast; they look smart!</p>
 </div></blockquote>
 <p>We have been working on building machines that could do simple math for a long time. One of the earliest such machines looked like this:</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/abacus.png"><img alt="Chinese Abacus" class="bg-primary mb-1 align-center" src="_images/abacus.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/abacus.png"><img alt="Chinese Abacus" class="bg-primary mb-1 align-center" src="_images/abacus.png" style="width: 500px;" /></a>
 <p>These gadgets have been used since around 200 B.C.! I watched a merchant flip those beads when I bought one while on a trip to China in 1995. It was an amazing experience!</p>
 <p>This is not really a machine. But it did help humans track things as they did “arithmetic!”</p>
 <p>Building actual machines that could help us humans do math was a long, arduous process. We had problems actually constructing machines with the complexity to do much, even adding and subtracting! Eventually, we managed to come up with some clever machines. Some worked, but many did not!</p>
 <p>Here is a <em>Curta Calculator</em> that appeared right after World War II. I used this beast in my early aero classes when the professors wanted more accuracy than I could get from my trusty slide rule!</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/CurtaCalculator.jpg"><img alt="Curta Calculator" class="bg-primary mb-1 align-center" src="_images/CurtaCalculator.jpg" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CurtaCalculator.jpg"><img alt="Curta Calculator" class="bg-primary mb-1 align-center" src="_images/CurtaCalculator.jpg" style="width: 500px;" /></a>
 </section>
 <section id="world-war-ii">
 <h2>World War II<a class="headerlink" href="#world-war-ii" title="Permalink to this heading">#</a></h2>
@@ -496,13 +499,13 @@ document.write(`
 <section id="harvard-mark-i">
 <h3>Harvard Mark I<a class="headerlink" href="#harvard-mark-i" title="Permalink to this heading">#</a></h3>
 <p>In 1944, Howard Aiken at Harvard University constructed an electro-mechanical machine using vacuum tubes, relays, and even motor-driven spinning mechanical gadgets that were common in calculators of the day. It worked, but it was hard to keep it running.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/Harvard-Mark-1.jpg"><img alt="Von Neumann Machine" class="bg-primary mb-1 align-center" src="_images/Harvard-Mark-1.jpg" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/Harvard-Mark-1.jpg"><img alt="Von Neumann Machine" class="bg-primary mb-1 align-center" src="_images/Harvard-Mark-1.jpg" style="width: 500px;" /></a>
 <p>Grace Hopper, the first female to reach the rank of Admiral in the U.S. Navy, worked on this machine and is considered one of the first computer programmers. (Ada Agusta Lovelace probably thought up the idea of programming around 1843!)</p>
 </section>
 <section id="von-neumann">
 <h3>Von Neumann<a class="headerlink" href="#von-neumann" title="Permalink to this heading">#</a></h3>
 <p>While working on the Manhattan Project, John Von Neumann published a paper in 1945 laying out the basic architecture of a “stored program” computer. Since then, all computing machines have basically used his architecture. In fact, they are called “Von Neumann Machines”:</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/von-neumann-machine.png"><img alt="Von Neumann Machine" class="bg-primary mb-1 align-center" src="_images/von-neumann-machine.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/von-neumann-machine.png"><img alt="Von Neumann Machine" class="bg-primary mb-1 align-center" src="_images/von-neumann-machine.png" style="width: 500px;" /></a>
 <p>The basic idea for how this would work is something I call the <em>Texas Four-Step</em> (I was teaching all this in Texas after all!):</p>
 <ul class="simple">
 <li><p><em>Fetch</em> - transfer an <em>instruction</em> from program memory into the <em>Control Unit</em></p></li>
@@ -515,22 +518,22 @@ document.write(`
 <section id="eniac">
 <h3>ENIAC<a class="headerlink" href="#eniac" title="Permalink to this heading">#</a></h3>
 <p>Von Neumann’s work heavily influenced the design of the first fully electronic computer, which was first fired up in 1945:</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/eniac.png"><img alt="ENIAC - First Electronic Computer" class="bg-primary mb-1 align-center" src="_images/eniac.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/eniac.png"><img alt="ENIAC - First Electronic Computer" class="bg-primary mb-1 align-center" src="_images/eniac.png" style="width: 500px;" /></a>
 <p>This beast had 17,000 vacuum tubes, and 1500 relays, weighed 30 tons, and cost $487,000 back then! Programming was done using punched cards. There was no high-level language! But it worked, and computer science took off!</p>
-<p>This machine was designed by J Presper Eckert and John Machly, who went on to form what is now the <em>Unisys Corporation</em>. I met Dr. Eckert at a meeting of the Philidelphia Area Computer Society sometime around 1982, where they demonstrated the Commodore 64 and compared it to ENIAC <span id="id1">[<a class="reference internal" href="bibliography.html#id7" title="Stephen Longo. The data bus. The Data Bus, 1983.">Lon83</a>]</span>!</p>
+<p>This machine was designed by J Presper Eckert and John Machly, who went on to form what is now the <em>Unisys Corporation</em>. I met Dr. Eckert at a meeting of the Philidelphia Area Computer Society sometime around 1982, where they demonstrated the Commodore 64 and compared it to ENIAC <span id="id2">[<a class="reference internal" href="bibliography.html#id7" title="Stephen Longo. The data bus. The Data Bus, 1983.">Lon83</a>]</span>!</p>
 </section>
 </section>
 <section id="the-mainframe-era">
 <h2>The Mainframe Era<a class="headerlink" href="#the-mainframe-era" title="Permalink to this heading">#</a></h2>
 <p>Between 1945 and 1971, the computer world was dominated by mainframe computer systems. These machines were huge and very expensive. Only big corporations (and universities) could afford them. The machines were locked up in “machine rooms” where only trained technicians could actually touch them!</p>
 <p>In 1964, when I started my aerospace engineering degree at Virginia Tech, the school had an IBM-360 computer, nearly identical to the machines (six of them) that NASA used to land Apollo 11 on the Moon.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/ibm-360.png"><img alt="IBM-360" class="bg-primary mb-1 align-center" src="_images/ibm-360.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/ibm-360.png"><img alt="IBM-360" class="bg-primary mb-1 align-center" src="_images/ibm-360.png" style="width: 500px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Programs were typed on “Key Punch Machines,” which produced one 80-character line of text per card. My Master’s Thesis was a stack of cards that fit in a metal tray about two feet long and had a nice leather handle to carry it. I slid that tray through a window to a technician, and usually a day later, got my tray back along with a huge pile of paper with the printed results!</p>
 </div>
 <p>In 1956, John Bardeen, Walter Brattain, and William Shockley won the Nobel Prize for inventing the transistor. After that, the tubes and relays disappeared. This made for cooler (temperature) machines that used less power. It also made them less expensive and much smaller.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/SmallTransistor.jpg"><img alt="Early Transistor" class="bg-primary mb-1 align-center" src="_images/SmallTransistor.jpg" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/SmallTransistor.jpg"><img alt="Early Transistor" class="bg-primary mb-1 align-center" src="_images/SmallTransistor.jpg" style="width: 500px;" /></a>
 </section>
 <section id="supercomputers">
 <h2>Supercomputers<a class="headerlink" href="#supercomputers" title="Permalink to this heading">#</a></h2>
@@ -538,7 +541,7 @@ document.write(`
 <section id="cdc-6600">
 <h3>CDC-6600<a class="headerlink" href="#cdc-6600" title="Permalink to this heading">#</a></h3>
 <p>Around 1964, Seymore Cray introduced the CDC-6600, one of which was installed at Wright-Patterson Air Force Base and running in 1973 when I was assigned as an Air Force research scientist after graduate school.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/cdc-6600.jpg"><img alt="CDC-6600 - First Supercomputer" class="bg-primary mb-1 align-center" src="_images/cdc-6600.jpg" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cdc-6600.jpg"><img alt="CDC-6600 - First Supercomputer" class="bg-primary mb-1 align-center" src="_images/cdc-6600.jpg" style="width: 500px;" /></a>
 <p>This machine cost about $2.3 million and ran at 10MHz. It had 64-bit memory, all 982 kilobytes of it! This machine was where some serious CFD codes were being developed. The term “supercomputer” was first used to describe this machine, but it was hardly “super”!</p>
 <p>My first serious CFD code was developed on this machine and solved hypersonic flow over a simple missile flying at zero degrees angle-of-attack (axisymmetric flow) at Mach 6. It took 10 minutes of this machine’s dedicated crunching time to get a printed result. I might be lucky and get the results on a magnetic tape I could later process to generate graphics displays, but such power was very new, and few knew how to make pictures appear. Sometimes we used pen plotters to draw graphics, but often we plotted things by hand! Sad!</p>
 <div class="admonition note">
@@ -550,14 +553,14 @@ document.write(`
 <section id="illiac-iv">
 <h3>ILLIAC IV<a class="headerlink" href="#illiac-iv" title="Permalink to this heading">#</a></h3>
 <p>NASA Ames also was the home of an experimental machine that basically looked like a series of CDC-6600 machines lined up in a row. The machine was potentially going to be fast, but the complexity of it kept it from becoming fully operational. I got a look at the machine on my visit:</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/illiac-4.jpg"><img alt="ILLIAC IV" class="bg-primary mb-1 align-center" src="_images/illiac-4.jpg" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/illiac-4.jpg"><img alt="ILLIAC IV" class="bg-primary mb-1 align-center" src="_images/illiac-4.jpg" style="width: 500px;" /></a>
 <p>This machine was supposed to have 256 floating point units, but they ran out of money before completion. It was not available for use while I was there.</p>
 </section>
 </section>
 <section id="serious-supercomputers">
 <h2>Serious Supercomputers<a class="headerlink" href="#serious-supercomputers" title="Permalink to this heading">#</a></h2>
 <p>Seymore Cray got tired of working for CDC, and took several of the engineers with him to form *Cray Research”. Seymore designed a new machine that was designed for serious number crunching. Instead of setting up a simple two-number-adding device, he designed one that added two sets of 64 numbers together all at the same time. This was called a vector machine. He used some clever tricks to make his system go faster, one called pipelining, which broke up a single long-running operation into a sequence of steps, each running quickly. More input data could be loaded into the first stage since, as soon as the first stage was complete, it could accent new input rather than waiting until all stages were completed.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/Cray-1.jpg"><img alt="Cray-1" class="bg-primary mb-1 align-center" src="_images/Cray-1.jpg" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/Cray-1.jpg"><img alt="Cray-1" class="bg-primary mb-1 align-center" src="_images/Cray-1.jpg" style="width: 500px;" /></a>
 <p>The Cray-1 was an $8 million machine with 8 MB of memory. It was capable of 160 MFLOPS, which was impressive in its day!</p>
 <p>Vector machines had one problem. To maximize efficiency, you needed to make sure you had 64 numbers to add available simultaneously, so programming was pretty complex. This problem was eventually hidden behind supporting libraries and really smart compilers. Still, it took careful coding to really get speedy solutions.</p>
 <div class="admonition note">
@@ -569,7 +572,7 @@ document.write(`
 <section id="the-dawn-of-the-integrated-circuit">
 <h2>The Dawn of the Integrated Circuit<a class="headerlink" href="#the-dawn-of-the-integrated-circuit" title="Permalink to this heading">#</a></h2>
 <p>In 1971, Intel Corporation released a magical chip called the <em>Intel 4004</em>. This small chip lived inside a 16-pin case and contained all the basic parts needed to create a 4-bit calculating device. It was supposed to end up in hand-help calculators, but its real impact was to show that we could build computing devices in this new way - with <em>integrated circuits</em>!</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/intel-4004.png"><img alt="Intel 4004 Integrated Circuit" class="bg-primary mb-1 align-center" src="_images/intel-4004.png" style="width: 300px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/intel-4004.png"><img alt="Intel 4004 Integrated Circuit" class="bg-primary mb-1 align-center" src="_images/intel-4004.png" style="width: 400px;" /></a>
 <p>The 4004 was followed by a more useful one called the <em>Intel 8080</em>. Those chips ended up in the first computing device a normal human could buy if they were willing to build one from a kit!</p>
 <p>I could not quite afford the $450 it took to buy the kit, so I bought this gadget:</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/kim-1.png"><img alt="Kim-1 development board" class="bg-primary mb-1 align-center" src="_images/kim-1.png" style="width: 400px;" /></a>
@@ -583,7 +586,7 @@ document.write(`
 <p>The technology used in building these integrated circuit devices was complicated. The chips were constructed in hyper-clean rooms. The materials needed to form the transistors, and interconnecting wires, were sprayed onto a silicon chip using a photographic mask that controlled where the gas landed. Many layers of this procedure formed all of the electronic parts needed.</p>
 <p>Early chips could build transistors as small as several millimeters in size, and we could put thousands of them in a chip an inch square. As they got better at this, suddenly, we could put millions of transistors in the same space. Chips like the Intel 8086, a 16-bit machine, appeared, and even useful home computers became possible. (Ever heard of a spreadsheet? That piece of software convinced IBM to release the first personal computer really designed for businesses. Well, accountants!)</p>
 <p>Just to give you some perspective, today’s manufacturing can build a transistor as small as 3-4 nanometers. How small is that? Well human hair is about 10-80,000 times that big. We are now reaching the point where going any smaller might require moving atoms around. Did you know that IBM did just that in 1989?</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/ibm-logo.png"><img alt="CDC-6600 - First Supercomputer" class="bg-primary mb-1 align-center" src="_images/ibm-logo.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/ibm-logo.png"><img alt="CDC-6600 - First Supercomputer" class="bg-primary mb-1 align-center" src="_images/ibm-logo.png" style="width: 500px;" /></a>
 <p>Oh, and remember this! For each of the over a billion transistors we place on a chip, three wires are needed to hook it up to the other parts in a circuit! Those wires carry electrons that move at the speed of light, which is the limiting factor in defining the speed of our calculations!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -593,7 +596,7 @@ document.write(`
 <section id="hitting-the-wall">
 <h3>Hitting the wall<a class="headerlink" href="#hitting-the-wall" title="Permalink to this heading">#</a></h3>
 <p>Eventually, we reached a point where making transistors smaller was pretty hard. But the computer processor parts were small enough that engineers had an idea. Why not put two processor chips on the silicon, interconnect them so they can share memory and input/output, and package a <em>dual-core</em> device. Intel released the <em>Pentium</em> dual-core processor in 1993.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/intel-dual-core.png"><img alt="Intel Dual-Cire Pentium" class="bg-primary mb-1 align-center" src="_images/intel-dual-core.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/intel-dual-core.png"><img alt="Intel Dual-Cire Pentium" class="bg-primary mb-1 align-center" src="_images/intel-dual-core.png" style="width: 500px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These chips were built in a plant outside of Albuquerque, where I ran a Cray-2 supercomputer! I used to carry a Pentium chip on my key-chain, a gift from Intel when I toured the plant!</p>
@@ -607,7 +610,7 @@ document.write(`
 <section id="cray-2">
 <h2>Cray-2<a class="headerlink" href="#cray-2" title="Permalink to this heading">#</a></h2>
 <p>Seymore Cray was always looking for “More Power.” The problem was that running faster generated more heat and used more electricity. The Cray 2, introduced in 1985, was Cray’s first venture into a multi-core supercomputer. The design was unique. It had four processors and could reach 1.9 GFLOPS! The entire machine was emersed in an inert coolant that circulated through cooling towers to dissipate the heat! (It looked like a giant fish tank. (Not goldfish, “Cray Fish”! Yuck, Yuck!) When it was introduced, it was the fastest machine on the planet!</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/cray-2.jpg"><img alt="Cray-2 Supercomputer" class="bg-primary mb-1 align-center" src="_images/cray-2.jpg" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/cray-2.jpg"><img alt="Cray-2 Supercomputer" class="bg-primary mb-1 align-center" src="_images/cray-2.jpg" style="width: 500px;" /></a>
 <p>It was so fast we used an IBM mainframe to feed it and extract the data from a run!</p>
 <p>Big Supercomputers like this continued to evolve. Many machines were developed that tried to compete with Cray, but the writing was on the wall! Those small “personal computers” were getting powerful enough to do some serious work. We also now had a nice network system, which began back when I was at ARL as the <em>ARPANET</em> and evolved into the <em>Internet</em>. By 1990, many machines could communicate and transfer data and code back and forth. Time for a new idea!</p>
 <section id="beowulf">
@@ -624,7 +627,7 @@ document.write(`
 <h2>Clustered Supercomputers.<a class="headerlink" href="#clustered-supercomputers" title="Permalink to this heading">#</a></h2>
 <p>Not to be outdone, the supercomputer world went to work on the bottleneck - the network. They started looking into ways to speed up the data transfer rate between independent machines. The results were impressive. Instead of moving data at one billion bits per second, they could reach speeds of over 200 Gbps!</p>
 <p>We are off and running again!</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/connection-machine.jpg"><img alt="COnnection Machine" class="bg-primary mb-1 align-center" src="_images/connection-machine.jpg" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/connection-machine.jpg"><img alt="COnnection Machine" class="bg-primary mb-1 align-center" src="_images/connection-machine.jpg" style="width: 500px;" /></a>
 <p>This machine, one of which I saw at Los Alamos National Laboratory in 1991, contained 65536 microprocessors, each with four kilobytes of memory.</p>
 <p>``{note}
 It was fun to watch all the blinky lights when this beast ran - especially in a dark room!</p>
@@ -646,17 +649,17 @@ Can we do better?
 <h3>NCAR Cheyenne Supercomputer<a class="headerlink" href="#ncar-cheyenne-supercomputer" title="Permalink to this heading">#</a></h3>
 <p>A few years ago, while visiting relatives in Cheyenne, WY, I visited the <em>National Center for Atmospheric Research Supercomputer Center</em>, which is the home of the 58th fastest machine today! This computer consists of 4032 <em>compute nodes</em> each sporting two Intel 18-core processors and 256GB of RAM!</p>
 <p>Since I used to run a supercomputer center, they gave me a VIP tour of the facility:</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/ncar-cheyenne.png"><img alt="NCAR Cheyenne Supercomputer" class="bg-primary mb-1 align-center" src="_images/ncar-cheyenne.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/ncar-cheyenne.png"><img alt="NCAR Cheyenne Supercomputer" class="bg-primary mb-1 align-center" src="_images/ncar-cheyenne.png" style="width: 500px;" /></a>
 <p>The actual machine fills up a rather large room, and the facility is next to a huge lake that supplies cooling water. Nearby, there is a wind farm that supplies some of the power for the machine.</p>
 <p>I had them open up the back of one of these cases to see the network wiring:</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/ncar-cheyenne-interconnect.png"><img alt="NCAR Cheyenne Network Wiring" class="bg-primary mb-1 align-center" src="_images/ncar-cheyenne-interconnect.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/ncar-cheyenne-interconnect.png"><img alt="NCAR Cheyenne Network Wiring" class="bg-primary mb-1 align-center" src="_images/ncar-cheyenne-interconnect.png" style="width: 500px;" /></a>
 <p>The complete machine has over 145,000 cores and 432 terabytes of memory! This machine can reach 5.4 PetaFLOPS (peta = 1 billion x 1 billion!)</p>
 <p>Pretty fast! But the 2023 Top500 list of supercomputers put another machine at the top as the fastest in the world!</p>
 </section>
 <section id="doe-oak-ridge-frontier">
 <h3>DOE Oak Ridge Frontier<a class="headerlink" href="#doe-oak-ridge-frontier" title="Permalink to this heading">#</a></h3>
 <p>The top machine for 2023 has 8699905 AMD 2ghz processors and runs at a staggering 1.194 ExaFLOPS</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/oak-ridge-frontier.png"><img alt="DOE Oak Ridge Frontier Supercomputer" class="bg-primary mb-1 align-center" src="_images/oak-ridge-frontier.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/oak-ridge-frontier.png"><img alt="DOE Oak Ridge Frontier Supercomputer" class="bg-primary mb-1 align-center" src="_images/oak-ridge-frontier.png" style="width: 500px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Just for reference, here are the speed terms:</p>
@@ -680,15 +683,16 @@ Can we do better?
 <h3>Baby Machines<a class="headerlink" href="#baby-machines" title="Permalink to this heading">#</a></h3>
 <p>Looking at my research code, I am struck by how simple the basic operations actually are. Most of the work is just a giant loop over each data point in a grid, with several hundred simple math operations being processed. Those calculations must fetch numbers from memory, and store results back into memory. That adds up to a lot of work, but does it take a mega-buck machine to do just that?</p>
 <p>Here is a basic computer processor I used in my <em>Computer Architecture</em> courses at <em>Austin Community College</em> where I taught Computer Science for 17 years.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/attiny-85.png"><img alt="ATtiny82 Microprocessor" class="bg-primary mb-1 align-center" src="_images/attiny-85.png" style="width: 300px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/attiny-85.png"><img alt="ATtiny82 Microprocessor" class="bg-primary mb-1 align-center" src="_images/attiny-85.png" style="width: 400px;" /></a>
 <p>This little chip holds a complete computer with internal memory for both programs and data. It has enough calculating power to do some real work. Normally, these little chips end up by the dozens in your home appliances and even your car! My students used this chip as a basis for writing a C++ program that simulated what was going on inside. It was a lot of fun and a challenge for new C++ programmers!</p>
 <p>Connecting each chip to another chip requires one wire. Unfortunately, there are not that many places where we can attach a single wire. There are only eight pins on this thing.</p>
 <p>What if we created a grid of these chips and interconnected them the same way we create a computational grid for our aero problems? We could have thousands of these critters in a box that would fit on your desk!</p>
 </section>
 <section id="custom-computers">
 <h3>Custom Computers<a class="headerlink" href="#custom-computers" title="Permalink to this heading">#</a></h3>
-<p>That little machine is still pretty general-purpose, and only processes eight bits at a time. We can do enev better!</p>
-<p>We have been building computers, or rather, growing computers, for long enough to see basic patterns in how the chip hardware is laid out. Most current computers were designed with no thought (well, little thought) into the specific problems they will process. Chip designers have devised a tactic to build a chip with a pattern of basic parts and interconnects that can be programmed to create a specific design. Basically, we add code that hooks up the parts the way we want. These chips are called <em>Field Programmable Gate Arrays</em>. They offer another potential revolution in computing.</p>
+<p>That little machine is still pretty general-purpose and only processes eight bits at a time. We can do even better!</p>
+<p>We have been building computers, or rather, growing computers, for long enough to see basic patterns in how the chip hardware is laid out. Most current computers were designed with no thought (well, little thought) into the specific problems they will process. Chip designers have devised a tactic to build a chip with a pattern of basic parts and interconnects that can be programmed to create a specific design. Basically, we add code that hooks up the parts the way we want. These chips are called <em>Field field-programmable gate Arrays</em>. They offer another potential revolution in computing.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/TinyFPGA.jpg"><img alt="ATtiny82 Microprocessor" class="bg-primary mb-1 align-center" src="_images/TinyFPGA.jpg" style="width: 500px;" /></a>
 <p>What if we custom-design a chip to do our CFD problems? We can manufacture these custom chips as needed to build the machine we need for just our specific problems. Create custom boards to mount and power everything and run your problems! No operating system is needed, just your code and basic support code to make the calculations fly and the data move around!</p>
 <p>Is this even feasible? I can see a world where we start with our basic mathematical definition of the solution we want, add in a geometry of data points we will need to analyze the flow field, then let a sophisticated compiler assess the math and figure out how to design and interconnect our custom machines to generate a solver.</p>
 </section>
