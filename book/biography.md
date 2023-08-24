@@ -1,10 +1,11 @@
 # Roie Black: Biography
 
-```python
-from IPython.display import Image
-Image(filename="assets/images/RoieBlack.jpg")
+```{image} assets/images/RoieBlack.jpg
+:alt: Roie Black in Tuscany, Italy
+:class: bg-primary mb-1
+:width: 400px
+:align: center
 ```
-
 Roie was born in 1946 in Washington D.C. He practically grew up in the
 Smithsonian.
 

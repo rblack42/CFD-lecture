@@ -16,6 +16,7 @@
     - Leibnitz calculus (1684)
     - Isaac Newton laws of motion (1687)
     - Taylor Series (1715)
+        - finite differences
     - Rankine laws of thermodynamics (1850)
     - Navier Stokes (1822-1850)
     - Add in gas laws
@@ -30,7 +31,9 @@
         - Blaise Pascal's Pascaline (+)
         - Babbage Engine
             - Ada Agusta Lovelace invented programming (1843)
+            - Jacquard Loom punched cards (1804)
         - Curta Calculator (*,+)
+            - developed during WWII by prisoner
             - replaced my slide rule (+)
     - World War II
         - Harvard Mark 1 (1944) (+ book)
