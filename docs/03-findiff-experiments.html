@@ -373,9 +373,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="experiments-with-burgers-equation">
 <h1>Experiments with Burger’s Equation<a class="headerlink" href="#experiments-with-burgers-equation" title="Permalink to this heading">#</a></h1>
-<p>The original code developed for this study was written in Fortran IV, and used global variables for everything! I rewrote that program in Python* in 2003 as part of a course in <em>Object Oriented Design</em>, but really did not tap into the real powerof modern <em>Python</em> libraries. My goal is to fix that problem.</p>
+<p>The original code developed for this study was written in Fortran IV, and used global variables for everything! I rewrote that program in Python* in 2003 as part of a course in <em>Object Oriented Design</em>, but did not tap into the real power of modern <em>Python</em> libraries. My goal is to fix that problem.</p>
 <section id="burgers-equation">
 <h2>Burger’s Equation<a class="headerlink" href="#burgers-equation" title="Permalink to this heading">#</a></h2>
+<p>The first example we will consider is <a class="reference external" href="http://en.wikipedia.org/wiki/Burgers%27_equation">Burger’s Equation</a>. I am borrowing code from Lorena Barba’s CFD Python: the 12 steps to Navier-Stokes equations <span id="id1">[<a class="reference internal" href="bibliography.html#id4" title="Lorena Barba and Gilbert Forsyth. Cfd python: the 12 steps to navier-stokes equations. Journal of Open Source Education, 2(16):21, 2019. URL: https://doi.org/10.21105/jose.00021, doi:10.21105/jose.00021.">BF19</a>]</span>. Here is the basic equation.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1d6a1df1-a9fd-4ca0-b25d-beb513667521">
+<span class="eqno">(1)<a class="headerlink" href="#equation-1d6a1df1-a9fd-4ca0-b25d-beb513667521" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu\frac{\partial^2 u}{\partial x^2}
+\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Initial Conditions</span>
@@ -384,37 +389,33 @@ document.write(`
 </div>
 </div>
 <p>There is an analytic solution available for this equation, useful for checking errors:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c63efa5c-6c4d-4991-9aa5-1212f22381d2">
-<span class="eqno">(1)<a class="headerlink" href="#equation-c63efa5c-6c4d-4991-9aa5-1212f22381d2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<p>If we use these initial conditions:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0f67598d-60e9-415b-9b06-1830e4959d68">
+<span class="eqno">(2)<a class="headerlink" href="#equation-0f67598d-60e9-415b-9b06-1830e4959d68" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u = - \frac{2\nu}{\phi}\frac{\partial \phi}{\partial x} + 4
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d45db1f2-f33b-4be9-96ec-acda3311ae21">
-<span class="eqno">(2)<a class="headerlink" href="#equation-d45db1f2-f33b-4be9-96ec-acda3311ae21" title="Permalink to this equation">#</a></span>\[\begin{equation}
-\phi = exp \Bigl(\frac{-(x - 4t)^2}{4\nu(t + 1} \Bigr) + exp\Bigl( \frac{-(x - 4t - 2\pi)}{4\nu}\Bigr)
+<div class="amsmath math notranslate nohighlight" id="equation-37e8a867-4b19-4388-96f4-105fc58d6a26">
+<span class="eqno">(3)<a class="headerlink" href="#equation-37e8a867-4b19-4388-96f4-105fc58d6a26" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\phi = exp \Bigl(\frac{-(x - 4t)^2}{4\nu(t + 1} \Bigr) + exp\Bigl( \frac{-(x - 2\pi)^2}{4\nu}\Bigr)
 \end{equation}\]</div>
+<p>Then, the analytic solution is given as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-013be0a0-7db2-4448-b81b-8b04113f90b1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-013be0a0-7db2-4448-b81b-8b04113f90b1" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
+\phi &amp;= \exp \bigg(\frac{-(x-4t)^2}{4 \nu (t+1)} \bigg) + \exp \bigg(\frac{-(x-4t -2 \pi)^2}{4 \nu(t+1)} \bigg)
+\end{eqnarray}\]</div>
+<p>The boundary condition is:</p>
+<div class="math notranslate nohighlight">
+\[u(0) = u(2\pi)\]</div>
 <p>A simple finite difference representation of this equation looks like this:</p>
 <div class="math notranslate nohighlight">
 \[\frac{u_i^{n+1}-u_i^n}{\Delta t} + u_i^n \frac{u_i^n - u_{i-1}}{\Delta x} = \nu \frac{u_{i+1} - 2u_i + u_{i-1}}{\Delta x^2}\]</div>
 <p>Given an initial condition, the only unknown is <span class="math notranslate nohighlight">\(u_i^{n+1}\)</span>. We can “march” this code in time to see how the solution evolves.</p>
 <div class="math notranslate nohighlight">
 \[u_i^{n+1} = u_i - u_i \frac{\Delta t}{\Delta x} (u_i - u_{i-1}) + \nu \frac{\Delta t}{\Delta x^2}(u_{i+1} - 2u_i + u_{i-1})\]</div>
-<p>Here is the analytic solution to this problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e8ec9e8a-a906-4e2d-90d4-71f103e28d5d">
-<span class="eqno">(3)<a class="headerlink" href="#equation-e8ec9e8a-a906-4e2d-90d4-71f103e28d5d" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
-    u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
-    \phi &amp;= \exp \bigg(\frac{-x^2}{4 \nu} \bigg) + \exp \bigg(\frac{-(x-2 \\pi)^2}{4 \nu} \bigg)
-\end{eqnarray}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-2f21f95f-4236-4a8e-bbca-0e745a8a6d01">
-<span class="eqno">(4)<a class="headerlink" href="#equation-2f21f95f-4236-4a8e-bbca-0e745a8a6d01" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
-u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
-\phi &amp;= \exp \bigg(\frac{-(x-4t)^2}{4 \nu (t+1)} \bigg) + \exp \bigg(\frac{-(x-4t -2 \pi)^2}{4 \nu(t+1)} \bigg)
-\end{eqnarray}\]</div>
-<p>Our boundary condition will be:</p>
-<div class="math notranslate nohighlight">
-\[u(0) = u(2\pi)\]</div>
 <p>The code provided in the 12-Step lecture runs the iteration through all timesteps and displays the final solution. I think it would be more interesting to watch the solution evolve. Since we showed code that animates the PNS solver solution, all we need to do is adapt that here.</p>
-<p>SInce this problem is so simple, I will simply let the animation code step the solution. Each time the animatio code calls fetch data, we will run the solver code and return the results.</p>
-<p>First set up access to the required libraries: np for data, and matplotlib for graphics</p>
+<p>SInce this problem is so simple, I will simply let the animation code step the solution. Each time the animation code calls fetch data, we run the solver code and return the results.</p>
+<p>First set up access to the required libraries: np for data, and matplotlib for graphics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -475,7 +476,7 @@ u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11863e9d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11cd28550&gt;]
 </pre></div>
 </div>
 <img alt="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" src="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" />
