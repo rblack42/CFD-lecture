@@ -377,8 +377,8 @@ document.write(`
 <section id="burgers-equation">
 <h2>Burger’s Equation<a class="headerlink" href="#burgers-equation" title="Permalink to this heading">#</a></h2>
 <p>The first example we will consider is <a class="reference external" href="http://en.wikipedia.org/wiki/Burgers%27_equation">Burger’s Equation</a>. I am borrowing code from Lorena Barba’s CFD Python: the 12 steps to Navier-Stokes equations <span id="id1">[<a class="reference internal" href="bibliography.html#id4" title="Lorena Barba and Gilbert Forsyth. Cfd python: the 12 steps to navier-stokes equations. Journal of Open Source Education, 2(16):21, 2019. URL: https://doi.org/10.21105/jose.00021, doi:10.21105/jose.00021.">BF19</a>]</span>. Here is the basic equation.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1d6a1df1-a9fd-4ca0-b25d-beb513667521">
-<span class="eqno">(1)<a class="headerlink" href="#equation-1d6a1df1-a9fd-4ca0-b25d-beb513667521" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1cbff6cd-a5de-477c-98a2-111347a8d6ba">
+<span class="eqno">(1)<a class="headerlink" href="#equation-1cbff6cd-a5de-477c-98a2-111347a8d6ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu\frac{\partial^2 u}{\partial x^2}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -390,17 +390,17 @@ document.write(`
 </div>
 <p>There is an analytic solution available for this equation, useful for checking errors:</p>
 <p>If we use these initial conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0f67598d-60e9-415b-9b06-1830e4959d68">
-<span class="eqno">(2)<a class="headerlink" href="#equation-0f67598d-60e9-415b-9b06-1830e4959d68" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1806febf-796e-42cd-91b5-ac93bfda5697">
+<span class="eqno">(2)<a class="headerlink" href="#equation-1806febf-796e-42cd-91b5-ac93bfda5697" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u = - \frac{2\nu}{\phi}\frac{\partial \phi}{\partial x} + 4
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-37e8a867-4b19-4388-96f4-105fc58d6a26">
-<span class="eqno">(3)<a class="headerlink" href="#equation-37e8a867-4b19-4388-96f4-105fc58d6a26" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9750bb25-f2d9-4954-adbc-a669b94f9e40">
+<span class="eqno">(3)<a class="headerlink" href="#equation-9750bb25-f2d9-4954-adbc-a669b94f9e40" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \phi = exp \Bigl(\frac{-(x - 4t)^2}{4\nu(t + 1} \Bigr) + exp\Bigl( \frac{-(x - 2\pi)^2}{4\nu}\Bigr)
 \end{equation}\]</div>
 <p>Then, the analytic solution is given as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-013be0a0-7db2-4448-b81b-8b04113f90b1">
-<span class="eqno">(4)<a class="headerlink" href="#equation-013be0a0-7db2-4448-b81b-8b04113f90b1" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-2adf690e-9a83-4bfc-ad19-894683792a51">
+<span class="eqno">(4)<a class="headerlink" href="#equation-2adf690e-9a83-4bfc-ad19-894683792a51" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
 \phi &amp;= \exp \bigg(\frac{-(x-4t)^2}{4 \nu (t+1)} \bigg) + \exp \bigg(\frac{-(x-4t -2 \pi)^2}{4 \nu(t+1)} \bigg)
 \end{eqnarray}\]</div>
@@ -476,7 +476,7 @@ u &amp;= -\frac{2 \nu}{\phi} \frac{\partial \phi}{\partial x} + 4 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11cd28550&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10fdd5810&gt;]
 </pre></div>
 </div>
 <img alt="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" src="_images/b67ac709072c0c4612af1e76afafc18478099063e277da3c1d77a656f4159135.png" />

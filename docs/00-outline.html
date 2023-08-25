@@ -333,7 +333,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -349,6 +351,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#websites">Websites</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -360,12 +370,23 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-outline">
 <h1>Lecture Outline<a class="headerlink" href="#lecture-outline" title="Permalink to this heading">#</a></h1>
+<section id="websites">
+<h2>Websites<a class="headerlink" href="#websites" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Roie Black: <a class="reference external" href="https://www.co-pylit.org">https://www.co-pylit.org</a></p>
+<ul>
+<li><p>Blog and course notes</p></li>
+</ul>
+</li>
+<li><p><a class="github reference external" href="https://github.com/rblack42/CFD-lecture">rblack42/CFD-lecture</a></p></li>
+<li><p>Web notes: <a class="reference external" href="https://rblack42.github.io/CFD-lecture">https://rblack42.github.io/CFD-lecture</a></p></li>
+</ul>
 <p>(* indicates picture, + indicates physical example)</p>
 <ol class="arabic simple">
 <li><p>How did you get here?</p>
 <ul class="simple">
-<li><p>Grow up in the Smithsonian (Wright Flyer *)</p></li>
-<li><p>Take a ride in a Connie (*)</p></li>
+<li><p>Grow up in the Smithsonian (Wright Flyer 1944 *)</p></li>
+<li><p>First airplane a ride 1951 (Connie *)</p></li>
 </ul>
 </li>
 <li><p>Human Flight</p>
@@ -386,7 +407,7 @@ document.write(`
 </li>
 <li><p>The Math of Flight</p>
 <ul class="simple">
-<li><p>Leibnitz calculus (1684)</p></li>
+<li><p>Gottfried Leibniz calculus (1684)</p></li>
 <li><p>Isaac Newton laws of motion (1687)</p></li>
 <li><p>Taylor Series (1715)</p>
 <ul>
@@ -394,7 +415,7 @@ document.write(`
 </ul>
 </li>
 <li><p>Rankine laws of thermodynamics (1850)</p></li>
-<li><p>Navier Stokes (1822-1850)</p></li>
+<li><p>Claude-Louis Navier (1822) and George Stokes (1850)</p></li>
 <li><p>Add in gas laws</p></li>
 <li><p>Then find a way to solve them</p>
 <ul>
@@ -407,20 +428,19 @@ document.write(`
 </li>
 <li><p>Basic Computers</p>
 <ul class="simple">
-<li><p>Abacus (*,+)</p></li>
+<li><p>Abacus (200BC) (*,+)</p></li>
 <li><p>Mechanical calculating machines</p>
 <ul>
-<li><p>Da Vinci drawing</p></li>
-<li><p>Blaise Pascal’s Pascaline (+)</p></li>
-<li><p>Babbage Engine</p>
+<li><p>Da Vinci drawing (1502)</p></li>
+<li><p>Blaise Pascal’s Pascaline (1642 +)</p></li>
+<li><p>Babbage Engine (1822 *)</p>
 <ul>
 <li><p>Ada Agusta Lovelace invented programming (1843)</p></li>
 <li><p>Jacquard Loom punched cards (1804)</p></li>
 </ul>
 </li>
-<li><p>Curta Calculator (*,+)</p>
+<li><p>Curta Calculator (1938 in Buchenwald Prison Camp *,+)</p>
 <ul>
-<li><p>developed during WWII by prisoner</p></li>
 <li><p>replaced my slide rule (+)</p></li>
 </ul>
 </li>
@@ -430,14 +450,14 @@ document.write(`
 <ul>
 <li><p>Harvard Mark 1 (1944) (+ book)</p>
 <ul>
-<li><p>Grace Hopper</p></li>
+<li><p>Grace Hopper programmed it</p></li>
 </ul>
 </li>
 <li><p>John Von Neumanm describes a computer architecture (1945) (*)</p></li>
 <li><p>ENIAC (1945) (*.+)</p></li>
 </ul>
 </li>
-<li><p>Mainframe Era</p>
+<li><p>Mainframe Era 1945-1971</p>
 <ul>
 <li><p>IBM 360 (1964) (*)</p>
 <ul>
@@ -580,6 +600,7 @@ document.write(`
 </li>
 </ol>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -630,6 +651,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#websites">Websites</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
